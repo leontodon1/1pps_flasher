@@ -1,3 +1,8 @@
 PAToken.txt
 *.key
 *.env
+
+# Word temp files
+~$*.doc*
+*.tmp
+
