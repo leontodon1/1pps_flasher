@@ -48,9 +48,9 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 - Zweitlösung für Zeitmarken in Bedeckungsvideos, wenn das primäre Zeitsystem aus technischen Gründen plötzlich ausfällt
 
 <div style="display: flex; align-items: flex-start; gap: 5px;">
-<img src="media/image1.jpeg" alt="" width="20%">
-<img src="media/image2.jpeg" alt="" width="20%">
-<img src="media/image3.jpeg" alt="" width="20%">
+<img src="media/image1.jpeg" alt="" width="30%">
+<img src="media/image2.jpeg" alt="" width="30%">
+<img src="media/image3.jpeg" alt="" width="30%">
 </div>
 <p>Abbildung 1: GPS pps Blitzer, fertiges Gerät</p>
 
