@@ -1,6 +1,4 @@
-**Gerät mit GPS pps Blitz\
-für das Setzen von optischen Zeitstempeln\
-in astronomischen Videos von Digitalkameras**
+**Gerät mit GPS pps Blitz für das Setzen von optischen Zeitstempeln in astronomischen Videos von Digitalkameras**
 
 Björn Kattentidt - IOTA/ES - bjoern@kattentidt-astro.de
 
@@ -49,9 +47,11 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 
 - Zweitlösung für Zeitmarken in Bedeckungsvideos, wenn das primäre Zeitsystem aus technischen Gründen plötzlich ausfällt
 
-<img src="media/image1.jpeg" alt="" width="30%">
-<img src="media/image2.jpeg" alt="" width="30%">
-<img src="media/image3.jpeg" alt="" width="30%">
+<div style="display: flex; align-items: flex-start; gap: 5px;">
+<img src="media/image1.jpeg" alt="" width="20%">
+<img src="media/image2.jpeg" alt="" width="20%">
+<img src="media/image3.jpeg" alt="" width="20%">
+</div>
 <p>Abbildung 1: GPS pps Blitzer, fertiges Gerät</p>
 
 **Funktionalität:**
@@ -370,9 +370,11 @@ Tabelle 2: Teileliste
 
 <u>Leiterplatte:</u> 1PPS_Teiler_v5_pro.brd
 
+<div style="display: flex; align-items: flex-start; gap: 5px;">
 <img src="media/image8.png" alt="" width="40%">
 <img src="media/image9.png" alt="" width="40%">
 <img src="media/image10.png" alt="" width="40%">
+</div>
 <p>Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) [1]</p>
 
 **Programmierung:**
