@@ -372,10 +372,8 @@ Tabelle 2: Teileliste
 
 ![](media/image8.png)
 ![](media/image9.png)
-![Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) \[1\]](media/image10.png)
-Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) \[1\]
-<img src="media/image10.png" alt="AbbildunG 5" width="50%">
-<p>abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) \[1\]</p>
+<img src="media/image10.png" alt="" width="20%">
+<p>Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) [1]</p>
 
 **Programmierung:**
 
