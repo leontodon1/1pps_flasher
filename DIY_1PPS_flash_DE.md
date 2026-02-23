@@ -49,7 +49,9 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 
 - Zweitlösung für Zeitmarken in Bedeckungsvideos, wenn das primäre Zeitsystem aus technischen Gründen plötzlich ausfällt
 
-<img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image1.jpeg" style="width:1.89375in;height:1.89375in" /> <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image2.jpeg" style="width:1.88264in;height:1.88264in" /> <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image3.jpeg" style="width:1.88264in;height:1.88264in" />
+![](media/image1.jpeg)
+![](media/image2.jpeg)
+![Abbildung 1: GPS pps Blitzer, fertiges Gerät](media/image3.jpeg)
 
 Abbildung 1: GPS pps Blitzer, fertiges Gerät
 
@@ -302,7 +304,7 @@ Anzahl 1-Bits ungerade, Parität = 1:\
 Gesamtzahl der Einsen mit Parität gerade, das heißt gerade Parität\
 Das Paritätsbit wird bei gerader Parität so berechnet, dass die Gesamtanzahl der Einsen gerade ist.
 
-<img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image4.png" style="width:6.29792in;height:1.18056in" />Abbildung 2: Modus \#86, Minute 35
+![Abbildung 2: Modus #86, Minute 35](media/image4.png)
 
 Die Sequenzen \#82 bis \#85 haben diesen fehlenden Blitz an letzter Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter feststellen.
 
@@ -335,8 +337,7 @@ PyOTE: <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\med
 
 **Elektrische Übersicht:**
 
-<img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image6.png" style="width:6.29792in;height:5.36181in" />
-
+![Abbildung 3: Elektrischer Zusammenhang illustriert](media/image6.png)
 Abbildung 3: Elektrischer Zusammenhang illustriert
 
 **Elektrischer Aufbau:**
@@ -345,6 +346,7 @@ Abbildung 3: Elektrischer Zusammenhang illustriert
 Diese Leiterplatte dient hauptsächlich dazu die Verbindungen zwischen den Geräten mit Steckverbindungen zu realisieren. So können die gezeigten modularen Komponenten des nur teils gelöteten Geräts leicht ausgetauscht, getestet oder bei Defekt ersetzt werden. Wer sichere elektrische Verbindungen bevorzugt, kann mehr oder alles als Lötverbindung ausführen. Steckverbindungen mit Stiftleisten und Buchsenleisten sind aber ausreichend.
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image7.png" style="width:6.29792in;height:3.54236in" />
+![Alt-Text](Pfad)
 
 Abbildung 4: Schaltplan der Verbindungsleiterplatte mit EAGLE \[1\]
 
@@ -371,6 +373,7 @@ Tabelle 2: Teileliste
 <u>Leiterplatte:</u> 1PPS_Teiler_v5_pro.brd
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image8.png" style="width:1.84028in;height:3.62778in" /> <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image9.png" style="width:1.84028in;height:3.60625in" /> <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image10.png" style="width:1.84028in;height:3.62778in" />
+![Alt-Text](Pfad)
 
 Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) \[1\]
 
@@ -397,6 +400,7 @@ Achtung!: Sowohl in die Leitung zu D8 als auch vom (linken) BCD Kodierrad zum GN
 
 Die Spannung für den Tiefentladeschutz wird an A7 gelesen und die Abschaltung über A5 getätigt. Der Arduino NANO schaltet die gesamte Stromversorgung über eine Schaltung mit zwei Transistoren bis auf einen kleinen Reststrom ab.\
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image11.png" style="width:6.2875in;height:4.22361in" />
+![Alt-Text](Pfad)
 
 Abbildung 6: Elektrische Verbindungen
 
@@ -407,12 +411,14 @@ Auch mechanische Handfertigkeit ist sehr von Vorteil.\
 Wichtig: Beim Löten, besonders bei den Leitungen während des Lötens die Bauteile nie berühren, sondern vor dem Löten fixieren (Klammern, Kreppklebeband). „Kalte Lötstellen“ führen zum früheren Ausfall oder zum Nichtfunktionieren des fertigen Geräts. Nur so heiß löten wie erforderlich. Das Lot darf fast keinen Rauch abgeben und eine Lötung muß nach wenigen Sekunden fertig sein. Das Lot muß fließen und erkaltet eine glänzende Oberfläche haben. Die Lötstelle nicht bewegen bis das Lot fest ist!
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image12.jpeg" style="width:6.25556in;height:2.06389in" />
+![Alt-Text](Pfad)
 
 Abbildung 7: Löten von Kabeln und Pins
 
 Diese Steckverbindungen müssen angefertigt werden, eine hat einen 2200 Ohm Widerstand:
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image13.jpeg" style="width:6.24444in;height:1.54236in" />
+![Alt-Text](Pfad)
 
 Abbildung 8: Benötigte Steckverbindungen
 
@@ -420,6 +426,7 @@ Es werden Schnittlängen (mm) für die flexiblen Leitungen gemäß Grafik vorges
 Es sollten eher kürzere als längere Maße verwendet werden.
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image14.jpeg" style="width:6.29792in;height:5.30833in" />
+![Alt-Text](Pfad)
 
 Abbildung 9: Leitungslängen und -arten illustriert
 
@@ -437,6 +444,7 @@ Der Pin „RX“ wird nicht verwendet und bleibt frei.\
 Alle anderen Pinstifte werden mit Leitungen belegt.
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image15.jpeg" style="width:6.25556in;height:1.54236in" />
+![Alt-Text](Pfad)
 
 Abbildung 10: Leiterplatte für Verbindungen der Geräte
 
@@ -449,7 +457,7 @@ Achtung!: In die gemeinsame Masseleitung muß ein 2200 Ohm Widerstand eingelöte
 Die vier äußeren, überstehenden Stifte an der Gehäuseseite vorsichtig bündig abschneiden. Dabei nicht die vier Kunststoffniete beschädigen, die das Gehäuse zusammen halten.
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image16.jpeg" style="width:6.24444in;height:2.05347in" />
-
+![Alt-Text](Pfad)
 Abbildung 11: Bündelleitung an Kodierrädern und DC-DC-Wandler
 
 **Arduino NANO:**
@@ -459,7 +467,7 @@ Die LED „POW“ sowie „TX“ mit undurchsichtigem Material abdecken (Isolier
 Die Pins RST und A6 bleiben später frei.
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image17.jpeg" style="width:6.25556in;height:1.53194in" />
-
+![Alt-Text](Pfad)
 Abbildung 12: Stift- und Buchsenleisten am Arduino NANO und dem GPS-Modul
 
 **GPS-Modul:**
@@ -475,7 +483,7 @@ Das integrierte Ladegerät wird über den USB-C Anschluß versorgt und ist direk
 Hinweis: Damit die LED des Lademoduls sich an bestimmter Stelle befinden, wird empfohlen die Leitungen an den USB-Anschluß als Draht auszuführen.
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image18.jpeg" style="width:6.25556in;height:2.06389in" />
-
+![Alt-Text](Pfad)
 Abbildung 13: Ladegerät für den LiFePo4 Akkumulator
 
 **Gehäuse:**
@@ -483,14 +491,14 @@ Abbildung 13: Ladegerät für den LiFePo4 Akkumulator
 Für die mechanischen Arbeiten werden hier einige hilfreiche Tips gegeben. Man hat am besten eine kleine Werkstatt und Basiswerkzeuge (Feilen, Sägen, Fräser, Stechbeitel, Schleifpapier, Tischbohrmaschine, kleine Handbohrmaschine, Schraubstock, Werktisch). Je weniger Werkzeuge verfügbar sind, desto geschickter muß man damit umgehen können!
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image19.png" style="width:6.29792in;height:5.08542in" />
-
+![Alt-Text](Pfad)
 Abbildung 14: Gehäuse Maßzeichnung
 
 Die rechteckige Öffnung für die **Kodierräder** muß sehr genau positioniert (0,5mm) und als Preßpassung ausgeführt werden. Andernfalls müssen die Kodierräder innen mit Heißkleber fixiert werden.\
 Die künftige Aussparung anreißen. Dazu die Fläche mit Klebeband abdecken, damit die Ritzungen das Gehäuse nicht beschädigen. Zunächst die Fräsungen mit Untermaß auf einer Tischbohrmaschine fertigen, indem man das Werkstück an einem Führungsklotz entlang führt. Zug um Zug die Löcher stirnfäsen und diese dann mithilfe der Führung seitenfräsen.
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image20.jpeg" style="width:6.25556in;height:1.22361in" />
-
+![Alt-Text](Pfad)
 Abbildung 15: Anfertigen der Öffnung im Gehäuse für die Kodierräder
 
 Die Feinarbeit geschieht mit einer rechteckigen Schlüsselfeile bis zum Spielmaß. Dabei stets mit Meßschieber nachmessen, damit eine Preßpassung für die Zählräder an der langen Seite entsteht!
@@ -499,7 +507,7 @@ In gleicher Weise den Schlitz für den **USB-Ladeanschluß** anbringen.\
 Mit einer 3 mm Rundfeile von außen zu den Schraublöchern hin eine Fase anbringen, damit das USB-Bauteil bündig am Gehäuse anliegt. Das USB-Bauteil anlegen und die 2 mm Bohrungen passend anbringen. Dazu für die zweite Bohrung eine Schraube einsetzen.
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image21.jpeg" style="width:4.48958in;height:2.22361in" />
-
+![Alt-Text](Pfad)
 Abbildung 16: Anfertigung der Öffnung im Gehäuse für den USB-C Ladeanschluß
 
 Für das **Schalt-Drehpotentiometer** ist in der Höhe 0,1 mm Genauigkeit erforderlich, sonst paßt später der Deckel nicht darauf. Wenn er zuletzt doch nicht paßt, innen am Deckel eine flache Fräsung oder Anschliff mit Feinmechanik-Handschleifer (D ~15mm) anbringen oder das Loch mit Rundfeile entsprechend erweitern.
@@ -509,7 +517,7 @@ Der **Batteriehalter** paßt nicht ganz in die Gehäuseflanke. Mit einem Stechbe
 Die Positionen für die LED-Linsen im **Gehäusedeckel** müssen möglicherweise im Millimeter­bereich gegenüber der Maßzeichnung angepaßt werden. Diese Arbeit also erst kurz vor Vollendung nachholen. Die 3 Löcher anreißen und auf 10 mm mit einem Stufenbohrer aufbohren. Dann mit einer 10 mm Rundfeile eine Preßpassung für die Linsen herstellen. Achtung: Die Linse muß beim GPS und beim Arduino NANO bündig zur Deckelinnenseite gekürzt werden. Andernfalls könnte Druck auf das GPS-Modul ausgeübt werden und beim Arduino der Reset-Taster gedrückt werden. Es sollte auch an eine Abflachung an der Deckelinnenseite am Ort des Reset-Tasters des Arduino NANO gedacht werden.
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image22.jpeg" style="width:4.48958in;height:2.22361in" />
-
+![Alt-Text](Pfad)
 Abbildung 17: Anfertigung der Öffnung im Gehäusedeckel für die „Linsen“
 
 Wer die LED-Linsen nicht verwenden will kann auch wie folgt vorgehen:\
@@ -541,7 +549,7 @@ Die Öse befestigen.
 Die Leitungen der Kodierräder durch das Loch fädeln und die Kodierräder einpressen, wenn nötig mit Heißkleber innen fixieren.
 
 <img src="D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image23.jpeg" style="width:6.25556in;height:1.54236in" />
-
+![Alt-Text](Pfad)
 Abbildung 18: Unterbringung der einzelnen Geräte im Gehäuse
 
 Alle Steckverbindungen wie folgt richtig aufstecken: (port Name/Leiterplatte)\
