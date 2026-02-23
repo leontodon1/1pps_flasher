@@ -4,13 +4,16 @@ in astronomischen Videos von Digitalkameras**
 
 Björn Kattentidt - IOTA/ES - bjoern@kattentidt-astro.de
 
+\
+\
+
 **Motivation:**
 
 Bisherige Analogkameras konnten mit VTI (video time inserter) im
 Videodatenstrom mit Zeitinformationen gestempelt werden. Moderne
 Digitalkameras ermöglichen dies nur mit aufwändiger Programmierung.
 Daraus ergaben sich viele auch sehr gute Kamerasysteme im Eigenbau mit
-erheblichem Aufwand. Mit modernsten „smart telescopes" wird das Problem
+erheblichem Aufwand. Mit modernsten „smart telescopes“ wird das Problem
 deutlich, daß es noch schwerer möglich sein wird die speziellen Wünsche
 nach Zeitmarken mit Genauigkeit im Bereich von Millisekunden in Videos
 zu realisieren.
@@ -27,6 +30,9 @@ aber gerne bei Hinweisen zur Teilebeschaffung und der Umsetzung zum
 fertigen Gerät.\
 Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig
 durchzuführen.
+
+\
+\
 
 **Eigenschaften im Überblick:**
 
@@ -51,18 +57,18 @@ durchzuführen.
 
 - Betriebsdauer ca. 7 Stunden
 
-- Letzte 0,5 ... 1 Stunde „low batt." Anzeige durch schnell blinkende
+- Letzte 0,5 … 1 Stunde „low batt.“ Anzeige durch schnell blinkende
   Status-LED
 
 - Tiefentladeschutz: Gerät schaltet ab, Reststrom 2mA, alle LED aus
 
 - 2h Laden über USB-C, Ladegerät integriert.\
-  Unteres Fenster: Rotes Licht „Laden", oranges Licht "Voll"
+  Unteres Fenster: Rotes Licht „Laden“, oranges Licht “Voll“
 
 - Arduino NANO mit open source Kode über DC-DC Wandler (3,2 V zu 5,0 V)
 
-- GPS Modul ATGM336H (3,2 V) GPS+BD\
-  Warmstart 10-25 Sek. (Autor), Kaltstart 35 Sek. (Hersteller),\
+- <span lang="en-US">GPS Modul ATGM336H (3,2 V) GPS+BD\
+  Warmstart 10-25 Sek. </span>(Autor), Kaltstart 35 Sek. (Hersteller),\
   bis zu einigen Minuten bei ungünstigem Empfang\
   Mittleres Fenster: pps GPS Bereitschaft durch invertiert blinkende LED
 
@@ -71,14 +77,20 @@ durchzuführen.
 - Zweitlösung für Zeitmarken in Bedeckungsvideos, wenn das primäre
   Zeitsystem aus technischen Gründen plötzlich ausfällt
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image1.jpeg){width="1.89375in"
-height="1.89375in"}
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image2.jpeg){width="1.882638888888889in"
-height="1.882638888888889in"}
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image3.jpeg){width="1.882638888888889in"
-height="1.882638888888889in"}
+<span id="Grafik1" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_2d2eefed.jpg"
+original-image-title="" align="BOTTOM" width="182" height="182"
+border="0"></span> <span id="Grafik2" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_682ddece.jpg"
+original-image-title="" align="BOTTOM" width="181" height="181"
+border="0"></span> <span id="Grafik3" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m2358bc3.jpg"
+original-image-title="" align="BOTTOM" width="181" height="181"
+border="0"></span>
 
-Abbildung 1: GPS pps Blitzer, fertiges Gerät
+Abbildung 1: GPS pps Blitzer, fertiges Gerät\
+\
+\
 
 **Funktionalität:**
 
@@ -95,12 +107,13 @@ Der Code ist derart optimiert, daß die Blitze weniger als 100 µs nach
 dem pps Signal (peak per second) des GPS erscheinen. Die loop-Zeit
 beträgt unter 0,25 ms. Das Lichtsignal ist demnach deutlich weniger als
 1 ms verzögert. Eigene Messungen mithilfe einer DVTI ergaben maximal
-2ms. [Dies ist aber derzeit noch nicht zuverlässig nachgemessen worden
-und muß noch mittels EXTA festgestellt werden!]{.mark}
+2ms. <span style="background: #ffff00">Dies ist aber derzeit noch nicht
+zuverlässig nachgemessen worden und muß noch mittels EXTA festgestellt
+werden!</span>
 
-Der Blitz hat außer bei #00 immer dieselbe Dauer von 40ms.
+Der Blitz hat außer bei \#00 immer dieselbe Dauer von 40ms.
 
-Im Modus #00 leuchtet die LED lang. So kann die Helligkeit mit dem
+Im Modus \#00 leuchtet die LED lang. So kann die Helligkeit mit dem
 Schaltpotentiometer eingestellt werden. Am besten sieht man gerade noch
 ein schwaches Aufleuchten im Video. PyOTE kann sogar Markierungen
 auswerten, wenn man das Blitzen nicht mehr sieht.
@@ -130,13 +143,13 @@ blinkt die obere Status-LED in schneller Folge (4 Hertz). Bei
 Entladeschlußspannung (2,8 V) schaltet sich das Gerät in den Ruhemodus.
 Ist der Tiefentladeschutz aktiviert, gehen alle LED aus. Es fließt aber
 noch ein Reststrom wodurch der Akku nach weiteren 2 Tagen tiefentladen
-wird. [Daher muß das Gerät immer per Schalter ausgeschaltet werden, denn
-eine einzige Tiefentladung kann den LiFePo4 Akku
-zerstören.]{.underline}\
+wird. <u>Daher muß das Gerät immer per Schalter ausgeschaltet werden,
+denn eine einzige Tiefentladung kann den LiFePo4 Akku zerstören.</u>\
 Das Gerät kann reaktiviert werden, indem man es am Drehknopf
 ausschaltet, und wieder anschaltet. Geht es sofort wieder aus mit dem
 Anschalten ein paar Sekunden warten.
 
+<span id="Bookmark"></span><span id="_Hlk221744854"></span>
 **Verwendungsablauf:**
 
 Gerät an der Öse aufhängen oder mit Öse zum Zenit aufstellen, dann hat
@@ -155,17 +168,17 @@ Dies wird unter freiem Himmel binnen einer Minute geschehen, manchmal
 dauert es mehrere Minuten.
 
 Blinkt die Status-LED langsam, liegen noch keine gültigen NMEA Daten
-vor. Damit können die speziellen Funktionen von #99 abwärts bis #82
+vor. Damit können die speziellen Funktionen von \#99 abwärts bis \#82
 nicht verwendet werden. Allerdings kann das exakte 1pps-Signal mit den
-Funktionen #01 bis #81 verwendet werden, wenn schon die 1pps-LED blinkt.
-Blinkt die Status-LED schnell, bedeutet dies, daß der Akku bald leer
-sein wird und das Gerät dann in den Ruhemodus ausschaltet.
+Funktionen \#01 bis \#81 verwendet werden, wenn schon die 1pps-LED
+blinkt. Blinkt die Status-LED schnell, bedeutet dies, daß der Akku bald
+leer sein wird und das Gerät dann in den Ruhemodus ausschaltet.
 
 Für die LED an der Klammer wird das exakte elektrische pps-Signal des
 GPS-Moduls verwendet.
 
-Die Kodierräder zunächst auf #00 stellen und die benötigte Helligkeit am
-Potentiometer einstellen.
+Die Kodierräder zunächst auf \#00 stellen und die benötigte Helligkeit
+am Potentiometer einstellen.
 
 Dann den gewünschten Modus einstellen. Man kann jederzeit in jeden
 anderen Modus mit den beiden Kodierrädern schalten. Nach einer Sekunde
@@ -173,17 +186,16 @@ ist das Signal dann korrekt.\
 Nun kann das Gerät benutzt werden um Millisekunden genaue Zeitstempel
 optisch zu setzen.
 
-[Nach der Verwendung das Gerät am Drehknopf wieder
-abschalten!]{.underline}
+<u>Nach der Verwendung das Gerät am Drehknopf wieder abschalten!</u>
 
-**Funktionsweise:**
+<span id="Bookmark1"></span> **Funktionsweise:**
 
 An der Spitze der Klammer blitzt im Sekundentakt eine rote LED GPS
-synchron kurz auf. Wird die Zahl zum Beispiel auf #11 gestellt blitzt
+synchron kurz auf. Wird die Zahl zum Beispiel auf \#11 gestellt blitzt
 die LED jede elfte Sekunde. So kann jede zyklische Wiederholung
 eingestellt werden und der Beginn mit etwas Übung auch mit Hilfe einer
 sehr genauen Uhr voreingestellt werden, indem man die Zahl beginnend bei
-#01 geschwind höher stellt.
+\#01 geschwind höher stellt.
 
 Zum Verständnis: Ein interner Zähler zählt nach einem Blitzen von Null
 an aufwärts bis er die eingestellte Zahl erreicht hat. Stellt man diese
@@ -197,12 +209,12 @@ fertig zu werden.
 Dies ergibt zwar viele Freiheiten, aber diese Art der Einstellung
 erfordert Geschick und man benötigt noch eine genaue Zeit (Android: z.B.
 AtomUhr App). Startet und stoppt man das Video mit einer Roboter App
-(z.B. MacroDroid) bei Verwendung eines „smart telescope" mit
+(z.B. MacroDroid) bei Verwendung eines „smart telescope“ mit
 Mobiltelefon, dann sind Beginn und Ende des Videos sekundengenau, was
 die Feststellung der Minute wesentlich erleichtert.
 
 Zur deutlich leichteren Nutzung ohne weitere Apps sind Sonderfunktionen
-von #99 herab implementiert (siehe Liste). Diese Modi nutzen NMEA-Daten
+von \#99 herab implementiert (siehe Liste). Diese Modi nutzen NMEA-Daten
 und der Blitz leuchtet daher immer genau zur eingestellten Sequenz
 entsprechend der GPS Sekunde auf!
 
@@ -220,84 +232,180 @@ synchronisieren (Android: z.B. AtomUhr APP).
 
 **Liste der verfügbaren Modi (erweiterbar)**
 
-#00: Nur zu Zwecken der Helligkeitseinstellung der LED an der Klammer.\
+\#00: Nur zu Zwecken der Helligkeitseinstellung der LED an der Klammer.\
 Die LED leuchtet 0,8 Sekunden lang nach jedem pps.
 
-#01 ... #81: Die LED blitzt im Abstand der eingestellten Sekunden.
+\#01 … \#81: Die LED blitzt im Abstand der eingestellten Sekunden.
 Dazwischen bleibt sie aus. Eine gezielte Einstellung kann erreicht
 werden gemäß Beschreibung im Abschnitt Verwendung.
 
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| BCD               | Blitze bei genannter GPS-Sekunde          | LUT               | (Kode)            |                   |
-+:=================:+:=========================================:+:=================:+:=================:+:=================:+
-| Sekundenmaske vollständig synchron                                                                                        |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #99               | 00, 05, 10, 15, 20, 25, 30, 35, 40, 45,   | LUT_05s           | FF                |                   |
-|                   | 50, 55                                    |                   |                   |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #98               | 00, 10, 20, 30, 40, 50                    | LUT_10s           | FE                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #97               | 00, 15, 30, 45                            | LUT_15s           | FD                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #96               | 00, 20, 40                                | LUT_20s           | FC                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #95               | 00, 30                                    | LUT_30s           | FB                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #94               | 00                                        |                   | FA                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| Sekundenmaske mit Auslassung am Nulldurchgang (Minutenwechsel)                                                            |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #93               | 05, 10, 15, 20, 25, 30, 35, 40, 45, 50,   | LUT_05s0          | EF                |                   |
-|                   | 55                                        |                   |                   |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #92               | 10, 20, 30, 40, 50                        | LUT_10s0          | EE                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #91               | 15, 30, 45                                | LUT_15s0          | ED                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #90               | 20, 40                                    | LUT_20s0          | EC                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #89               | 30                                        | LUT_30s0          | EB                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| Sekundenmaske zeitlich kodiert                                                                                            |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #88               | 00, 05, 10, 20, 40                        | LUT_DF            | DF                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #87               | 00, 11, 23, 34, 45 (ähnlich Pseudo-Barker | LUT_DE            | DE                |                   |
-|                   | Kode)                                     |                   |                   |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #86               | 00, 11, 23, 34, 45; Minute binär: 48-53   | LUT_DD            | DD                |                   |
-|                   | und 54-59, LSB beginnend, Paritätsbit 46  |                   |                   |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| Sekundenmaske ohne Vorlaufereignis vor dem Minutenwechsel                                                                 |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #85               | 00, 05, 10, 15, 20, 25, 30, 35, 40, 45,   | LUT_05sv0         | CF                |                   |
-|                   | 50                                        |                   |                   |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #84               | 00, 10, 20, 30, 40                        | LUT_10sv0         | CE                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #83               | 00, 15, 30                                | LUT_15sv0         | CD                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #82               | 00, 20                                    | LUT_20sv0         | CC                |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-|                                                                                                                           |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
-| #01 ... #81       | Sekunden Abstand, beginnend mit           |                   |                   |                   |
-|                   | beliebiger Sekunde                        |                   |                   |                   |
-+-------------------+-------------------------------------------+-------------------+-------------------+-------------------+
+<table width="602" data-border="1" data-bordercolor="#00000a"
+data-cellpadding="7" data-cellspacing="0"
+style="page-break-before: auto; page-break-after: auto">
+<tbody>
+<tr data-valign="TOP">
+<td width="85"><p>BCD</p></td>
+<td width="332"><p>Blitze bei genannter GPS-Sekunde</p></td>
+<td width="73"><p>LUT</p></td>
+<td width="53"><p>(Kode)</p></td>
+</tr>
+<tr>
+<td colspan="4" width="586" data-valign="TOP"><p>Sekundenmaske
+vollständig synchron</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#99</p></td>
+<td width="332"><p>00, 05, 10, 15, 20, 25, 30, 35, 40, 45, 50,
+55</p></td>
+<td width="73"><p>LUT_05s</p></td>
+<td width="53"><p>FF</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#98</p></td>
+<td width="332"><p>00, 10, 20, 30, 40, 50</p></td>
+<td width="73"><p>LUT_10s</p></td>
+<td width="53"><p>FE</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#97</p></td>
+<td width="332"><p>00, 15, 30, 45</p></td>
+<td width="73"><p>LUT_15s</p></td>
+<td width="53"><p>FD</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#96</p></td>
+<td width="332"><p>00, 20, 40</p></td>
+<td width="73"><p>LUT_20s</p></td>
+<td width="53"><p>FC</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#95</p></td>
+<td width="332"><p>00, 30</p></td>
+<td width="73"><p>LUT_30s</p></td>
+<td width="53"><p>FB</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#94</p></td>
+<td width="332"><p>00</p></td>
+<td width="73"><p><br />
+</p></td>
+<td width="53"><p>FA</p></td>
+</tr>
+<tr>
+<td colspan="4" width="586" data-valign="TOP"><p>Sekundenmaske mit
+Auslassung am Nulldurchgang (Minutenwechsel)</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#93</p></td>
+<td width="332"><p>05, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55</p></td>
+<td width="73"><p>LUT_05s0</p></td>
+<td width="53"><p>EF</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#92</p></td>
+<td width="332"><p>10, 20, 30, 40, 50</p></td>
+<td width="73"><p>LUT_10s0</p></td>
+<td width="53"><p>EE</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#91</p></td>
+<td width="332"><p>15, 30, 45</p></td>
+<td width="73"><p>LUT_15s0</p></td>
+<td width="53"><p>ED</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#90</p></td>
+<td width="332"><p>20, 40</p></td>
+<td width="73"><p>LUT_20s0</p></td>
+<td width="53"><p>EC</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#89</p></td>
+<td width="332"><p>30</p></td>
+<td width="73"><p>LUT_30s0</p></td>
+<td width="53"><p>EB</p></td>
+</tr>
+<tr>
+<td colspan="4" width="586" data-valign="TOP"><p>Sekundenmaske zeitlich
+kodiert</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#88</p></td>
+<td width="332"><p>00, 05, 10, 20, 40</p></td>
+<td width="73"><p>LUT_DF</p></td>
+<td width="53"><p>DF</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#87</p></td>
+<td width="332"><p>00, 11, 23, 34, 45 (ähnlich Pseudo-Barker
+Kode)</p></td>
+<td width="73"><p>LUT_DE</p></td>
+<td width="53"><p>DE</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#86</p></td>
+<td width="332"><p>00, 11, 23, 34, 45; Minute binär: 48-53 und 54-59,
+LSB beginnend, Paritätsbit 46</p></td>
+<td width="73"><p>LUT_DD</p></td>
+<td width="53"><p>DD</p></td>
+</tr>
+<tr>
+<td colspan="4" width="586" data-valign="TOP"><p>Sekundenmaske ohne
+Vorlaufereignis vor dem Minutenwechsel</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#85</p></td>
+<td width="332"><p>00, 05, 10, 15, 20, 25, 30, 35, 40, 45, 50</p></td>
+<td width="73"><p>LUT_05sv0</p></td>
+<td width="53"><p>CF</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#84</p></td>
+<td width="332"><p>00, 10, 20, 30, 40</p></td>
+<td width="73"><p>LUT_10sv0</p></td>
+<td width="53"><p>CE</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#83</p></td>
+<td width="332"><p>00, 15, 30</p></td>
+<td width="73"><p>LUT_15sv0</p></td>
+<td width="53"><p>CD</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#82</p></td>
+<td width="332"><p>00, 20</p></td>
+<td width="73"><p>LUT_20sv0</p></td>
+<td width="53"><p>CC</p></td>
+</tr>
+<tr>
+<td colspan="4" width="586" data-valign="TOP"><p><br />
+</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="85"><p>#01 … #81</p></td>
+<td width="332"><p>Sekunden Abstand, beginnend mit beliebiger
+Sekunde</p></td>
+<td width="73"><p><br />
+</p></td>
+<td width="53"><p><br />
+</p></td>
+</tr>
+</tbody>
+</table>
 
 Tabelle 1: Modi
 
-Die Sequenzen #94 und #99 ermöglichen GPS-synchronisierte Blitze in
+Die Sequenzen \#94 und \#99 ermöglichen GPS-synchronisierte Blitze in
 äquidistantem Zeitabstand.
 
-Die Sequenzen #89 bis #93 haben keinen Blitz bei GPS Sekunde 0 zur
+Die Sequenzen \#89 bis \#93 haben keinen Blitz bei GPS Sekunde 0 zur
 Einordnung der Blitze relativ zur Minute.
 
-Die Sequenzen #88 und #87 erlauben es mit Wissen über die Minute des
+Die Sequenzen \#88 und \#87 erlauben es mit Wissen über die Minute des
 Beginns oder Ende des Videos zuverlässige Zeitangaben mit PyMovie/PyOTE
 zu ermitteln und zu prüfen.
 
-Die Sequenz #86 ist gleich wie #87 aber mit zusätzlich integrierter
+Die Sequenz \#86 ist gleich wie \#87 aber mit zusätzlich integrierter
 Kodierung der Minute mit Wiederholung und Paritätsbit an fixen
 Positionen, ähnlich der Methode beim DCF77 Signal. Damit ist es nicht
 mehr nötig die Minute zu notieren.
@@ -309,11 +417,13 @@ Gesamtzahl der Einsen mit Parität gerade, das heißt gerade Parität\
 Das Paritätsbit wird bei gerader Parität so berechnet, dass die
 Gesamtanzahl der Einsen gerade ist.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image4.png){width="6.297916666666667in"
-height="1.1805555555555556in"}Abbildung 2: Modus #86, Minute 35 xxxx
+<span id="Grafik4" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_2bbc9fcc.png"
+original-image-title="" align="BOTTOM" width="605" height="113"
+border="0"></span>Abbildung 2: Modus \#86, Minute 35 xxxx
 
-Die Sequenzen #82 bis #85 haben diesen fehlenden Blitz an letzter Stelle
-in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter
+Die Sequenzen \#82 bis \#85 haben diesen fehlenden Blitz an letzter
+Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter
 feststellen.
 
 Vorteil der Sonderfunktionen liegt in der geringeren Störung der
@@ -325,12 +435,12 @@ Nachteil der Sonderfunktionen ist, daß der Empfang der NMEA-Daten gültig
 sein muß, was länger dauern kann oder auch bei schlechtem Empfang
 Unterbrechungen erfahren kann.
 
-Benutzt man nur das pps-Signal in den Modi #01 bis #81 ist es
+Benutzt man nur das pps-Signal in den Modi \#01 bis \#81 ist es
 ausreichend wenn die LED des GPS blinkt.
 
 **Vier nützliche Anwendungsfälle:**
 
-#01:\
+\#01:\
 LED blitzt jede Sekunde. Grundfunktion. Verwendung wenn sehr schnell ein
 genaues Sekundensignal notwendig wird oder Bilder bei hohen Bildraten
 verloren gehen oder wenn die Bildzeiten der Kamera jittern. Es müssen
@@ -338,17 +448,17 @@ Minutenwechsel und Minute anders ermittelt werden, z.B. durch Notieren
 der Minute sowie Beginn des Videos per Automatismus zu bestimmter
 GPS-Sekunde.
 
-#85:\
+\#85:\
 LED blitzt alle 5 Sekunden außer in der 55-ten Sekunde. Bei gut
 erkennbaren Blitzen ist der Minutenwechsel gut auswertbar. Schnelle
 Ersatzlösung bei Versagen des Primärsystems. Minute muß notiert werden.
 
-#88:\
+\#88:\
 LED blitzt bei 00, 05, 10, 20 und 40 Sekunden. Mit wenig Blitzen hat man
 bei mehr als 2 Minuten langen Videos eine sichere Erkennung des
 Minutenwechsels. Minute muß notiert werden.
 
-#86\
+\#86\
 Mit Blitzen bei 00, 11, 23, 34 und 45 Sekunden mit ungleichen
 Zeitabständen nach dem Pseudo-Barker Kode ist nach schon unter einer
 Minute der Minutenwechsel eindeutig. Die Minute ist in den 6 bit der
@@ -368,21 +478,29 @@ dennoch sicher mit PyMovie (white aperture) und PyOTE erkannt werden
 können. Bei maximaler Leuchtstärke sieht man den Blitz sicher. Dies ist
 kaum abhängig von der Teleskopgröße!
 
-PyOTE:
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image5.png){width="3.042361111111111in"
-height="1.0958333333333334in"}
+PyOTE: <span id="Grafik5" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_1c19ed67.png"
+original-image-title="" align="BOTTOM" width="292" height="105"
+border="0"></span>
+
+\
+\
 
 **Elektrische Übersicht:**
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image6.png){width="6.297916666666667in"
-height="5.361805555555556in"}
+<span id="Grafik6" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_4b5c1cd1.png"
+original-image-title="" align="BOTTOM" width="605" height="515"
+border="0"></span>
 
 Abbildung 3: Elektrischer Zusammenhang illustriert
 
+\
+\
+
 **Elektrischer Aufbau:**
 
-[Schaltplan]{.underline} Verbindungs-Leiterplatte
-(1PPS_Teiler_v5_pro.sch)\
+<u>Schaltplan</u> Verbindungs-Leiterplatte (1PPS_Teiler_v5_pro.sch)\
 Diese Leiterplatte dient hauptsächlich dazu die Verbindungen zwischen
 den Geräten mit Steckverbindungen zu realisieren. So können die
 gezeigten modularen Komponenten des nur teils gelöteten Geräts leicht
@@ -391,8 +509,10 @@ elektrische Verbindungen bevorzugt, kann mehr oder alles als
 Lötverbindung ausführen. Steckverbindungen mit Stiftleisten und
 Buchsenleisten sind aber ausreichend.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image7.png){width="6.297916666666667in"
-height="3.542361111111111in"}
+<span id="Grafik7" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m7e9a34e2.png"
+original-image-title="" align="BOTTOM" width="605" height="340"
+border="0"></span>
 
 Abbildung 4: Schaltplan der Verbindungsleiterplatte mit EAGLE \[1\]
 
@@ -401,45 +521,37 @@ die Platine bei Leiterplatte 1PPS_Teiler_v5_pro! Erst bei
 1PPS_Teiler_v6_pro ist das design passend geändert, aber noch nicht
 verfügbar.
 
-[Teileliste]{.underline} (1PPS_Teiler_v5_pro.sch)
+<u>Teileliste</u> (1PPS_Teiler_v5_pro.sch)
 
-  -----------------------------------------------------------------------
-  Part       Value
-  ---------- ------------------------------------------------------------
-  C1         1µ keramisch
-
-  P1         100k log.
-
-  Q1         IRLML6401 oder p-Kanal MOSFET mit R~DS~ (\< 1 Ohm) und
-             U~DSthd~ (\< 1 V)
-
-  Q2         BC337-40 o.ä.
-
-  Q3         BC337-40 o.ä.
-
-  R1         180k
-
-  R2         10k
-
-  R3         1k2
-
-  R4         22k
-
-  R5         10k
-
-  R6         820k
-  -----------------------------------------------------------------------
+|  |  |
+|----|----|
+| Part | Value |
+| C1 | 1µ keramisch |
+| P1 | 100k log. |
+| Q1 | IRLML6401 oder p-Kanal MOSFET mit R<sub>DS</sub> (\< 1 Ohm) und U<sub>DSthd</sub> (\< 1 V) |
+| Q2 | BC337-40 o.ä. |
+| Q3 | BC337-40 o.ä. |
+| R1 | 180k |
+| R2 | 10k |
+| R3 | 1k2 |
+| R4 | 22k |
+| R5 | 10k |
+| R6 | 820k |
 
 Tabelle 2: Teileliste
 
-[Leiterplatte:]{.underline} 1PPS_Teiler_v5_pro.brd
+<u>Leiterplatte:</u> 1PPS_Teiler_v5_pro.brd
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image8.png){width="1.8402777777777777in"
-height="3.6277777777777778in"}
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image9.png){width="1.8402777777777777in"
-height="3.60625in"}
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image10.png){width="1.8402777777777777in"
-height="3.6277777777777778in"}
+<span id="Grafik8" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_5b92d83f.png"
+original-image-title="" align="BOTTOM" width="177" height="348"
+border="0"></span> <span id="Grafik9" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_40bc3e49.png"
+original-image-title="" align="BOTTOM" width="177" height="346"
+border="0"></span> <span id="Grafik10" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m34d0a7a5.png"
+original-image-title="" align="BOTTOM" width="177" height="348"
+border="0"></span>
 
 Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE)
 \[1\]
@@ -447,12 +559,12 @@ Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE)
 **Programmierung:**
 
 Im open-source Programmkode \[2\] sind Werte, welche beachtet werden
-sollen, mit „// SET: ..." kommentiert. Darüber hinaus wird auf
-Kommentare im Kode verwiesen.
+sollen, mit „// SET: …“ kommentiert. Darüber hinaus wird auf Kommentare
+im Kode verwiesen.
 
 Zum Programmieren wurde die Arduino IDE \[3\] verwendet.
 
-Es wurden folgende externe Bibliotheken im Kode eingebunden: #include\
+Es wurden folgende externe Bibliotheken im Kode eingebunden: \#include\
 \<AltSoftSerial.h\> \[4\], sehr stabile, serielle Schnittstelle für GPS
 (Timer-basiert)\
 \<TinyGPS++.h\> \[5\], parsen von NMEA-GPS-Daten (Zeit, Status)
@@ -473,8 +585,8 @@ NMEA-Daten werden über Arduino NANO Pin D8 (code: AltSoftSerial) für
 sekundenrichtige Einordnung in den speziellen Funktionen gelesen. Damit
 werden die NMEA-Daten für Sekunde und Minute ausgewertet und in oberen
 Modi (#99 abwärts) zur Kodierung verwendet.\
-Das linke Zählerrad wird an D2 ... D5 und an GND gesteckt, das rechte an
-D9 ... D12.\
+Das linke Zählerrad wird an D2 … D5 und an GND gesteckt, das rechte an
+D9 … D12.\
 Achtung!: Sowohl in die Leitung zu D8 als auch vom (linken) BCD
 Kodierrad zum GND Pin muß ein 2200 Ohm Widerstand eingelötet werden! An
 GND geschieht dies zum Schutz des ports D9 und an D8 damit die NMEA
@@ -484,8 +596,10 @@ Die Spannung für den Tiefentladeschutz wird an A7 gelesen und die
 Abschaltung über A5 getätigt. Der Arduino NANO schaltet die gesamte
 Stromversorgung über eine Schaltung mit zwei Transistoren bis auf einen
 kleinen Reststrom ab.\
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image11.png){width="6.2875in"
-height="4.223611111111111in"}
+<span id="Grafik11" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m26773e53.png"
+original-image-title="" align="BOTTOM" width="604" height="405"
+border="0"></span>
 
 Abbildung 6: Elektrische Verbindungen
 
@@ -496,23 +610,27 @@ haben!\
 Auch mechanische Handfertigkeit ist sehr von Vorteil.\
 Wichtig: Beim Löten, besonders bei den Leitungen während des Lötens die
 Bauteile nie berühren, sondern vor dem Löten fixieren (Klammern,
-Kreppklebeband). „Kalte Lötstellen" führen zum früheren Ausfall oder zum
+Kreppklebeband). „Kalte Lötstellen“ führen zum früheren Ausfall oder zum
 Nichtfunktionieren des fertigen Geräts. Nur so heiß löten wie
 erforderlich. Das Lot darf fast keinen Rauch abgeben und eine Lötung muß
 nach wenigen Sekunden fertig sein. Das Lot muß fließen und erkaltet eine
 glänzende Oberfläche haben. Die Lötstelle nicht bewegen bis das Lot fest
 ist!
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image12.jpeg){width="6.2555555555555555in"
-height="2.063888888888889in"}
+<span id="Grafik12" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_1dbdaa54.jpg"
+original-image-title="" align="BOTTOM" width="601" height="198"
+border="0"></span>
 
 Abbildung 7: Löten von Kabeln und Pins
 
 Diese Steckverbindungen müssen angefertigt werden, eine hat einen 2200
 Ohm Widerstand:
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image13.jpeg){width="6.2444444444444445in"
-height="1.542361111111111in"}
+<span id="Grafik13" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_22c4dad6.jpg"
+original-image-title="" align="BOTTOM" width="599" height="148"
+border="0"></span>
 
 Abbildung 8: Benötigte Steckverbindungen
 
@@ -520,8 +638,10 @@ Es werden Schnittlängen (mm) für die flexiblen Leitungen gemäß Grafik
 vorgeschlagen.\
 Es sollten eher kürzere als längere Maße verwendet werden.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image14.jpeg){width="6.297916666666667in"
-height="5.308333333333334in"}
+<span id="Grafik14" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m5c01e586.jpg"
+original-image-title="" align="BOTTOM" width="605" height="510"
+border="0"></span>
 
 Abbildung 9: Leitungslängen und -arten illustriert
 
@@ -546,11 +666,13 @@ Lötstelle. Auch beim Potentiometer. Danach auf einem einem Schmirgel
 einem Schwingschleifer geht diese Arbeit leichter. Dies ist nötig, damit
 das Potentiometer in das Gehäuse paßt. Metallstäube gründlich entfernen!
 
-Der Pin „RX" wird nicht verwendet und bleibt frei.\
+Der Pin „RX“ wird nicht verwendet und bleibt frei.\
 Alle anderen Pinstifte werden mit Leitungen belegt.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image15.jpeg){width="6.2555555555555555in"
-height="1.542361111111111in"}
+<span id="Grafik15" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m2f2d9442.jpg"
+original-image-title="" align="BOTTOM" width="601" height="148"
+border="0"></span>
 
 Abbildung 10: Leiterplatte für Verbindungen der Geräte
 
@@ -570,26 +692,30 @@ Die vier äußeren, überstehenden Stifte an der Gehäuseseite vorsichtig
 bündig abschneiden. Dabei nicht die vier Kunststoffniete beschädigen,
 die das Gehäuse zusammen halten.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image16.jpeg){width="6.2444444444444445in"
-height="2.053472222222222in"}
+<span id="Grafik16" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m372fbe49.jpg"
+original-image-title="" align="BOTTOM" width="599" height="197"
+border="0"></span>
 
 Abbildung 11: Bündelleitung an Kodierrädern und DC-DC-Wandler
 
 **Arduino NANO:**
 
-Stiftleisten auf der dem Reset-Taster und LEDs [gegenüber]{.underline}
+Stiftleisten auf der dem Reset-Taster und LEDs <u>gegenüber</u>
 liegenden Seite löten! Nur die benötigten Stifte einlöten: 6 Ports von
 GND bis A5 und 12 Ports von GND bis D12. Besondere Aufmerksamkeit sollte
 man dabei auf die richtige Position der Pin-Leisten verwenden!! Ein
 Steckbrett erleichtert das Löten senkrechter Stiftleisten erheblich.\
-Die LED „POW" sowie „TX" mit undurchsichtigem Material abdecken
-(Isolierband, Schrumpfschlauch, „flüssiges Gummi"). Ihr Licht stört die
-Anzeige der LED „L" welche später eine schwache Batterie oder ungültige
+Die LED „POW“ sowie „TX“ mit undurchsichtigem Material abdecken
+(Isolierband, Schrumpfschlauch, „flüssiges Gummi“). Ihr Licht stört die
+Anzeige der LED „L“ welche später eine schwache Batterie oder ungültige
 NMEA-Daten anzeigt.\
 Die Pins RST und A6 bleiben später frei.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image17.jpeg){width="6.2555555555555555in"
-height="1.5319444444444446in"}
+<span id="Grafik17" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m798f1654.jpg"
+original-image-title="" align="BOTTOM" width="601" height="147"
+border="0"></span>
 
 Abbildung 12: Stift- und Buchsenleisten am Arduino NANO und dem
 GPS-Modul
@@ -597,7 +723,7 @@ GPS-Modul
 **GPS-Modul:**
 
 Die Buchsenleiste (5-pol) auf der Seite mit dem großen quadratischen IC
-[gegenüber]{.underline} der Seite des Antennenanschluß auflöten.\
+<u>gegenüber</u> der Seite des Antennenanschluß auflöten.\
 Das Antennenkabel muß sehr vorsichtig mit starkem Druck und nicht
 verkantet aufgedrückt werden. Es rastet mit einem Klick ein und ist
 danach verdrehbar fixiert.\
@@ -618,8 +744,10 @@ Hinweis: Damit die LED des Lademoduls sich an bestimmter Stelle
 befinden, wird empfohlen die Leitungen an den USB-Anschluß als Draht
 auszuführen.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image18.jpeg){width="6.2555555555555555in"
-height="2.063888888888889in"}
+<span id="Grafik18" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m29bc63ce.jpg"
+original-image-title="" align="BOTTOM" width="601" height="198"
+border="0"></span>
 
 Abbildung 13: Ladegerät für den LiFePo4 Akkumulator
 
@@ -631,8 +759,10 @@ gegeben. Man hat am besten eine kleine Werkstatt und Basiswerkzeuge
 kleine Handbohrmaschine, Schraubstock, Werktisch). Je weniger Werkzeuge
 verfügbar sind, desto geschickter muß man damit umgehen können!
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image19.png){width="6.297916666666667in"
-height="5.085416666666666in"}
+<span id="Grafik19" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_1f50f6e0.png"
+original-image-title="" align="BOTTOM" width="605" height="488"
+border="0"></span>
 
 Abbildung 14: Gehäuse Maßzeichnung
 
@@ -645,8 +775,10 @@ die Fräsungen mit Untermaß auf einer Tischbohrmaschine fertigen, indem
 man das Werkstück an einem Führungsklotz entlang führt. Zug um Zug die
 Löcher stirnfäsen und diese dann mithilfe der Führung seitenfräsen.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image20.jpeg){width="6.2555555555555555in"
-height="1.2236111111111112in"}
+<span id="Grafik20" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_1add84a3.jpg"
+original-image-title="" align="BOTTOM" width="601" height="117"
+border="0"></span>
 
 Abbildung 15: Anfertigen der Öffnung im Gehäuse für die Kodierräder
 
@@ -660,16 +792,18 @@ anbringen, damit das USB-Bauteil bündig am Gehäuse anliegt. Das
 USB-Bauteil anlegen und die 2 mm Bohrungen passend anbringen. Dazu für
 die zweite Bohrung eine Schraube einsetzen.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image21.jpeg){width="4.489583333333333in"
-height="2.223611111111111in"}
+<span id="Grafik21" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m17e07954.jpg"
+original-image-title="" align="BOTTOM" width="431" height="213"
+border="0"></span>
 
-Abbildung 16: Anfertigung der Öffnung im Gehäuse für den USB-C
-Ladeanschluß
+<span id="Bookmark2"></span> Abbildung 16: Anfertigung der Öffnung im
+Gehäuse für den USB-C Ladeanschluß
 
 Für das **Schalt-Drehpotentiometer** ist in der Höhe 0,1 mm Genauigkeit
 erforderlich, sonst paßt später der Deckel nicht darauf. Wenn er zuletzt
 doch nicht paßt, innen am Deckel eine flache Fräsung oder Anschliff mit
-Feinmechanik-Handschleifer (D \~15mm) anbringen oder das Loch mit
+Feinmechanik-Handschleifer (D ~15mm) anbringen oder das Loch mit
 Rundfeile entsprechend erweitern.
 
 Der **Batteriehalter** paßt nicht ganz in die Gehäuseflanke. Mit einem
@@ -678,7 +812,7 @@ entfernen, daß der Batteriehalter vollständig in die Flanke paßt. Es ist
 nicht empfohlen den Batteriehalter passend zu bearbeiten.
 
 Die Positionen für die LED-Linsen im **Gehäusedeckel** müssen
-möglicherweise im Millimeter­bereich gegenüber der Maßzeichnung angepaßt
+möglicherweise im Millimeterbereich gegenüber der Maßzeichnung angepaßt
 werden. Diese Arbeit also erst kurz vor Vollendung nachholen. Die 3
 Löcher anreißen und auf 10 mm mit einem Stufenbohrer aufbohren. Dann mit
 einer 10 mm Rundfeile eine Preßpassung für die Linsen herstellen.
@@ -688,10 +822,12 @@ GPS-Modul ausgeübt werden und beim Arduino der Reset-Taster gedrückt
 werden. Es sollte auch an eine Abflachung an der Deckelinnenseite am Ort
 des Reset-Tasters des Arduino NANO gedacht werden.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image22.jpeg){width="4.489583333333333in"
-height="2.223611111111111in"}
+<span id="Grafik22" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m5336c4de.jpg"
+original-image-title="" align="BOTTOM" width="431" height="213"
+border="0"></span>
 
-Abbildung 17: Anfertigung der Öffnung im Gehäusedeckel für die „Linsen"
+Abbildung 17: Anfertigung der Öffnung im Gehäusedeckel für die „Linsen“
 
 Wer die LED-Linsen nicht verwenden will kann auch wie folgt vorgehen:\
 Am Gehäusedeckel an den Positionen der LEDs Löcher bohren (5mm),
@@ -707,7 +843,7 @@ vorhanden sein, sonst diesen außen und wenn nötig auch innen mit
 Stechbeitel vorsichtig glätten. Bei Nichtgefallen kann man ausbohren und
 es erneut versuchen oder die Löcher vergrößern.
 
-> **Finaler Zusammenbau:**
+**Finaler Zusammenbau:**
 
 Die Pin-Stiftleisten mit Länge 6 und 12 am Ardiono NANO löten wie
 beschrieben und die 5-Pin-Buchsenleiste am GPS-Modul.
@@ -746,13 +882,15 @@ Die Öse befestigen.
 Die Leitungen der Kodierräder durch das Loch fädeln und die Kodierräder
 einpressen, wenn nötig mit Heißkleber innen fixieren.
 
-![](D:\Daten\Arduino\_Projekte\GPS_flash\GPS_flash_fracture_GPS\media/media/image23.jpeg){width="6.2555555555555555in"
-height="1.542361111111111in"}
+<span id="Grafik23" class="image placeholder"
+original-image-src="DIY_1PPS_flash_DE_260223_1350_html_m1efaa11b.jpg"
+original-image-title="" align="BOTTOM" width="601" height="148"
+border="0"></span>
 
 Abbildung 18: Unterbringung der einzelnen Geräte im Gehäuse
 
-Alle Steckverbindungen wie folgt richtig aufstecken: (port
-Name/Leiterplatte)\
+<span id="Bookmark3"></span> Alle Steckverbindungen wie folgt richtig
+aufstecken: (port Name/Leiterplatte)\
 vom Ladegerät (B+, B-) zur Leiterplatte (+3,6V_CHG)\
 Kabel der LED an der Klammer zur Leiterplatte (LED)\
 vom Batteriehalter zur Leiterplatte (+3,2V_VBAT)\
@@ -770,14 +908,14 @@ vom Arduino NANO (A7) zur Leiterplatte (NANO_A7), Kode: UBatanaIn, U
 Batterie Eingang\
 vom Arduino NANO (GND, 5V) zur Leiterplatte (+5V_OUT1)
 
-Steckverbinder von Kodierrädern zum Arduino NANO: GND, D2...D5 von der
-linken Ziffer, D9...D12 von der rechten Ziffer und zuletzt das GPS-Modul
+Steckverbinder von Kodierrädern zum Arduino NANO: GND, D2…D5 von der
+linken Ziffer, D9…D12 von der rechten Ziffer und zuletzt das GPS-Modul
 mit Antenne (GPS) auf die fünf langen Pins stecken. Die Antenne in den
 freien Raum neben dem Potentiometer legen, das Kabel vorsichtig
 verlegen.
 
 Dann den LiFePo4-Akku in den Batteriehalter einsetzen. Zum elektrischen
-Test anschalten und die Funktion des Geräts im Modus #00 und #01 im
+Test anschalten und die Funktion des Geräts im Modus \#00 und \#01 im
 Freien überprüfen.\
 Es ist hilfreich zuerst anstatt des Akkus ein auf 3,2 V geregeltes
 Netzteil mit Strombegrenzung auf 150 mA zu verwenden. Dann kann nichts
@@ -805,7 +943,7 @@ nicht eingeklemmt sind.\
 Deckel festschrauben.
 
 Nach einem weiteren positiven Funktionstest, besonders mit einer der
-Sonderfunktionen, die GPS Daten benötigen, z.B. #99, ist das Gerät
+Sonderfunktionen, die GPS Daten benötigen, z.B. \#99, ist das Gerät
 betriebsbereit!
 
 Wird das Gehäuse wieder geöffnet und die Bauteile heraus geholt, muß man
@@ -833,32 +971,56 @@ Rundöse 3mm mit 2 Muttern (eine selbstsichernd)\
 flüssiges Gummi\
 Steckerleisten, Buchsenleisten:
 
-  ----------------------------------------------------------------------------
-  Anzahl         2          3          4          5          6          12
-  ---------- ---------- ---------- ---------- ---------- ---------- ----------
-  Pin            7          1          2        1 lang       1          1
-
-  Buchse         8          4                                       
-  ----------------------------------------------------------------------------
+<table width="602" data-border="1" data-bordercolor="#00000a"
+data-cellpadding="7" data-cellspacing="0">
+<tbody>
+<tr data-valign="TOP">
+<td width="72"><p>Anzahl</p></td>
+<td width="72"><p>2</p></td>
+<td width="72"><p>3</p></td>
+<td width="72"><p>4</p></td>
+<td width="72"><p>5</p></td>
+<td width="72"><p>6</p></td>
+<td width="71"><p>12</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="72"><p>Pin</p></td>
+<td width="72"><p>7</p></td>
+<td width="72"><p>1</p></td>
+<td width="72"><p>2</p></td>
+<td width="72"><p>1 lang</p></td>
+<td width="72"><p>1</p></td>
+<td width="71"><p>1</p></td>
+</tr>
+<tr data-valign="TOP">
+<td width="72"><p>Buchse</p></td>
+<td width="72"><p>8</p></td>
+<td width="72"><p>4</p></td>
+<td width="72"><p><br />
+</p></td>
+<td width="72"><p><br />
+</p></td>
+<td width="72"><p><br />
+</p></td>
+<td width="71"><p><br />
+</p></td>
+</tr>
+</tbody>
+</table>
 
 Tabelle 3: Benötigte Steckerleisten, Buchsenleisten
 
+\
 Alle Leitungen (mm):
 
-  ------------------------------------------------------------------
-  rot-schwarz: 100 (+3,2V_VBAT) rot - schwarz: 80 (+3,6V_CHG)
-  ----------------------------- ------------------------------------
-  braun-gelb: 80 (+5V_OUT)      rot -blau: 80 (+3,2V_IN)
-
-  weiß: 80 (D6)                 blue: 80 (D7)
-
-  rot: 80 (D8)                  rot - schwarz: 80 (+5V OUT1)
-
-  grün: 80 (A7)                 schwarz: 80 (A5)
-
-  4 + 5 Bündel für BCD          2-polige Leitung zu LED an Klammer:
-  Kodierräder                   1000
-  ------------------------------------------------------------------
+|                                  |                                          |
+|----------------------------------|------------------------------------------|
+| rot-schwarz: 100 (+3,2V_VBAT)    | rot - schwarz: 80 (+3,6V_CHG)            |
+| braun-gelb: 80 (+5V_OUT)         | rot -blau: 80 (+3,2V_IN)                 |
+| weiß: 80 (D6)                    | blue: 80 (D7)                            |
+| rot: 80 (D8)                     | rot - schwarz: 80 (+5V OUT1)             |
+| grün: 80 (A7)                    | schwarz: 80 (A5)                         |
+| 4 + 5 Bündel für BCD Kodierräder | 2-polige Leitung zu LED an Klammer: 1000 |
 
 Tabelle 4: Leitungen
 
@@ -874,19 +1036,19 @@ eigenen Nutzung, die zum Test leihweise abgegeben werden.
 
 **Quellen:**
 
-\[1\] EAGLE, <https://en.eagle.cool/download>
+<span lang="en-US">\[1\] EAGLE, <https://en.eagle.cool/download></span>
 
-\[2\] open-source code 1pps flasher\
-<https://github.com/leontodon1/1pps_flasher>
+<span lang="en-US">\[2\] open-source code 1pps flasher\
+<https://github.com/leontodon1/1pps_flasher></span>
 
-\[3\] Arduino IDE 2.3.7, Programmierung Arduino NANO\
-<https://www.arduino.cc/en/software/>
+<span lang="en-US">\[3\] Arduino IDE 2.3.7, Programmierung Arduino NANO\
+<https://www.arduino.cc/en/software/>,</span>
 
-\[4\] AltSoftSerial.h: open-source, Paul Stoffregen,\
-<https://github.com/PaulStoffregen/AltSoftSerial/blob/master/AltSoftSerial.h>
+<span lang="en-US">\[4\] AltSoftSerial.h: open-source, Paul Stoffregen,\
+<https://github.com/PaulStoffregen/AltSoftSerial/blob/master/AltSoftSerial.h></span>
 
-\[5\] TinyGPS++.h: open-source, Mikal Hart,\
-<https://github.com/mikalhart/TinyGPSPlus>
+<span lang="en-US">\[5\] TinyGPS++.h: open-source, Mikal Hart,\
+<https://github.com/mikalhart/TinyGPSPlus></span>
 
 **Version:**
 
@@ -894,42 +1056,51 @@ Arduino: v61\
 PCB: 1PPS_Teiler_v5_pro\
 Datum: 2026/02
 
-**Bildliste:**
+<span id="Bookmark4"></span> **Bildliste:**
 
-Abbildung 1: GPS pps Blitzer, fertiges Gerät\
-Abbildung 2: Modus #86, Minute 35\
-Abbildung 3: Elektrischer Zusammenhang illustriert\
-Abbildung 4: Schaltplan der Verbindungsleiterplatte mit EAGLE\
-Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE)\
-Abbildung 6: Elektrische Verbindungen\
-Abbildung 7: Löten von Kabeln und Pins\
-Abbildung 8: Benötigte Steckverbindungen\
-Abbildung 9: Leitungslängen und -arten illustriert\
-Abbildung 10: Leiterplatte für Verbindungen der Geräte\
-Abbildung 11: Bündelleitung an Kodierrädern und DC-DC-Wandler\
-Abbildung 12: Stift- und Buchsenleisten am Arduino NANO und dem
-GPS-Modul\
-Abbildung 13: Ladegerät für den LiFePo4 Akkumulator\
-Abbildung 14: Gehäuse Maßzeichnung\
-Abbildung 15: Anfertigen der Öffnung im Gehäuse für die Kodierräder\
-Abbildung 16: Anfertigung der Öffnung im Gehäuse für den USB-C
-Ladeanschluß\
-Abbildung 17: Anfertigung der Öffnung im Gehäusedeckel für die „Linsen"\
-Abbildung 18: Unterbringung der einzelnen Geräte im Gehäuse
+|  |  |
+|----|----|
+| Abbildung 1: | GPS pps Blitzer, fertiges Gerät |
+| Abbildung 2: | Modus \#86, Minute 35 |
+| Abbildung 3: | Elektrischer Zusammenhang illustriert |
+| Abbildung 4: | Schaltplan der Verbindungsleiterplatte mit EAGLE |
+| Abbildung 5: | Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) |
+| Abbildung 6: | Elektrische Verbindungen |
+| Abbildung 7: | Löten von Kabeln und Pins |
+| Abbildung 8: | Benötigte Steckverbindungen |
+| Abbildung 9: | Leitungslängen und -arten illustriert |
+| Abbildung 10: | Leiterplatte für Verbindungen der Geräte |
+| Abbildung 11: | Bündelleitung an Kodierrädern und DC-DC-Wandler |
+| Abbildung 12: | Stift- und Buchsenleisten am Arduino NANO und dem GPS-Modul |
+| Abbildung 13: | Ladegerät für den LiFePo4 Akkumulator |
+| Abbildung 14: | Gehäuse Maßzeichnung |
+| Abbildung 15: | Anfertigen der Öffnung im Gehäuse für die Kodierräder |
+| Abbildung 16: | Anfertigung der Öffnung im Gehäuse für den USB-C Ladeanschluß |
+| Abbildung 17: | Anfertigung der Öffnung im Gehäusedeckel für die „Linsen“ |
+| Abbildung 18: | Unterbringung der einzelnen Geräte im Gehäuse |
+
+\
+\
 
 **Glossar:**
 
-Arduino NANO Mikrocontroller Typ\
-BCD Binary Coded Decimals, 0 bis 10 binär kodiert auf 4 bit\
-DC-DC Direct Current, Gleichstromwandler\
-EXTA Exposure Timing Analyzer\
-GPS Global Positioning System\
-LED Light Emitting Diode, Leuchtdiode\
-LiFePo4 Lithiumeisenphosphat Akkutyp\
-LSB Least Significant Bit, niedrigst wertiges Bit\
-MSB Most Significant Bit, höchst wertiges Bit\
-NMEA National Marine Electronics Association, Standard für GPS Daten\
-open source Offen, frei verfügbar, darf verändert werden\
-pps, 1pps peak per second, Signal pro Sekunde\
-USB-C Universal Serial Bus, Typ C, hier nur für Energieversorgung\
-VTI Video Time Inserter, Gerät um Zeitstempel zu erzeugen
+|  |  |
+|----|----|
+| Arduino NANO | Mikrocontroller Typ |
+| BCD | Binary Coded Decimals, 0 bis 10 binär kodiert auf 4 bit |
+| DC-DC | Direct Current, Gleichstromwandler |
+| EXTA | Exposure Timing Analyzer |
+| GPS | Global Positioning System |
+| LED | Light Emitting Diode, Leuchtdiode |
+| LiFePo4 | Lithiumeisenphosphat Akkutyp |
+| LSB | Least Significant Bit, niedrigst wertiges Bit |
+| MSB | Most Significant Bit, höchst wertiges Bit |
+| NMEA | National Marine Electronics Association, Standard für GPS Daten |
+| open source | Offen, frei verfügbar, darf verändert werden |
+| pps, | 1pps peak per second, Signal pro Sekunde |
+| USB-C | Universal Serial Bus, Typ C, hier nur für Energieversorgung |
+| VTI | Video Time Inserter, Gerät um Zeitstempel zu erzeugen |
+
+\
+\
+\
