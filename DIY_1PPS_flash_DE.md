@@ -371,9 +371,9 @@ Tabelle 2: Teileliste
 <u>Leiterplatte:</u> 1PPS_Teiler_v5_pro.brd
 
 <div style="display: flex; align-items: flex-start; gap: 5px;">
-<img src="media/image8.png" alt="" width="40%">
-<img src="media/image9.png" alt="" width="40%">
-<img src="media/image10.png" alt="" width="40%">
+<img src="media/image8.png" alt="" width="30%">
+<img src="media/image9.png" alt="" width="30%">
+<img src="media/image10.png" alt="" width="30%">
 </div>
 <p>Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) [1]</p>
 
