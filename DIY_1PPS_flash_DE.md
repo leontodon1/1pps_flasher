@@ -607,7 +607,8 @@ Es wurde gezeigt, daß mit einer einfachen Idee eine kostengünstige Methode fü
 
 **Quellen:**
 
-\[1\] EAGLE, <https://en.eagle.cool/download>
+\[1\] EAGLE (Einfach Anzuwendender Grafischer Layout Editor)
+<https://en.eagle.cool/download>
 
 \[2\] open-source code 1pps flasher\
 <https://github.com/leontodon1/1pps_flasher>
