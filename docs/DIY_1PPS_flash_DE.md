@@ -4,15 +4,9 @@ für das Setzen von optischen Zeitstempeln<br>
 in astronomischen Videos von Digitalkameras
 </h1>
 
-<p style="margin-top:0.5em;">
-<h2>Björn Kattentidt - IOTA/ES - bjoern@kattentidt-astro.de</h2>
-</p>
-
-# Gerät mit GPS pps Blitz
-# für das Setzen von optischen Zeitstempeln
-# in astronomischen Videos von Digitalkameras
-
-**Björn Kattentidt - IOTA/ES - bjoern@kattentidt-astro.de**
+<h2 style="margin-top:0.5em;">
+Björn Kattentidt - IOTA/ES - <a href="mailto:bjoern@kattentidt-astro.de">bjoern@kattentidt-astro.de</a>
+</h2>
 
 **Motivation:**
 
