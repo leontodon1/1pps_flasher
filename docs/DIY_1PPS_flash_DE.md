@@ -303,7 +303,7 @@ Anzahl 1-Bits ungerade, Parität = 1:\
 Gesamtzahl der Einsen mit Parität gerade, das heißt gerade Parität\
 Das Paritätsbit wird bei gerader Parität so berechnet, dass die Gesamtanzahl der Einsen gerade ist.
 
-<img src="media/image4.png" alt="" width="100%">
+<img src="media\image4.png" alt="" width="100%">
 <p>Abbildung 2: Modus #86, Minute 35</p>
 
 Die Sequenzen \#82 bis \#85 haben diesen fehlenden Blitz an letzter Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter feststellen.
