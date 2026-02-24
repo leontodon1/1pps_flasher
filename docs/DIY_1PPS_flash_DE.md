@@ -5,7 +5,7 @@ in astronomischen Videos von Digitalkameras
 </h1>
 
 <p style="margin-top:0.5em;">
-Björn Kattentidt - IOTA/ES - bjoern@kattentidt-astro.de
+<h2>Björn Kattentidt - IOTA/ES - bjoern@kattentidt-astro.de</h2>
 </p>
 
 # Gerät mit GPS pps Blitz
