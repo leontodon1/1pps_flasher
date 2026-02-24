@@ -1,6 +1,6 @@
 # Gerät mit GPS pps Blitz
-## für das Setzen von optischen Zeitstempeln
-### in astronomischen Videos von Digitalkameras
+# für das Setzen von optischen Zeitstempeln
+# in astronomischen Videos von Digitalkameras
 
 **Björn Kattentidt - IOTA/ES - bjoern@kattentidt-astro.de**
 
