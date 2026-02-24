@@ -53,6 +53,10 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 
 - Zweitlösung für Zeitmarken in Bedeckungsvideos, wenn das primäre Zeitsystem aus technischen Gründen plötzlich ausfällt
 
+-	Öse zum Aufhängen mit richtiger Position der GPS Antenne
+
+-	Band zum Aufhängen und zur Fixierung des LED Kabels
+
 <div style="display: flex; align-items: flex-start; gap: 5px;">
 <img src="media/image1.jpeg" alt="" width="30%">
 <img src="media/image2.jpeg" alt="" width="30%">
