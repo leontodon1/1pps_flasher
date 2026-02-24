@@ -308,10 +308,10 @@ Die Sequenzen \#88 und \#87 erlauben es mit Wissen über die Minute des Beginns 
 Die Sequenz \#86 ist gleich wie \#87 aber mit zusätzlich integrierter Kodierung der Minute mit Wiederholung und Paritätsbit an fixen Positionen, ähnlich der Methode beim DCF77 Signal. Damit ist es nicht mehr nötig die Minute zu notieren.
 
 Beispiel:\
-1 0 0 0 1 1 binär = 35 dezimal: 35-te Minute, LSB kommt zuerst\
-Anzahl 1-Bits ungerade, Parität = 1:\
-Gesamtzahl der Einsen mit Parität gerade, das heißt gerade Parität\
-Das Paritätsbit wird bei gerader Parität so berechnet, dass die Gesamtanzahl der Einsen gerade ist.
+Gerade Parität: Gesamtzahl der Einsen mit Parität ist gerade\
+1 0 0 0 1 1 binär = 35 dezimal: 35-te Minute\
+MSB x x x x LSB, LSB kommt zeitlich zuerst\
+Das Paritätsbit wird also bei gerader Parität so berechnet, dass die Gesamtanzahl der Einsen gerade ist.
 
 <img src="media\image4.png" alt="" width="100%">
 <p>Abbildung 2: Modus #86, Minute 35</p>
