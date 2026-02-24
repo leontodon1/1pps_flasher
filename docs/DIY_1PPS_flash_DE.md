@@ -49,9 +49,12 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 
 - Zweitlösung für Zeitmarken in Bedeckungsvideos, wenn das primäre Zeitsystem aus technischen Gründen plötzlich ausfällt
 
-![](docs/media/image1.jpeg){width="1.89375in" height="1.89375in"} ![](docs/media/image2.jpeg){width="1.882638888888889in" height="1.882638888888889in"} ![](docs/media/image3.jpeg){width="1.882638888888889in" height="1.882638888888889in"}
-
-Abbildung 1: GPS pps Blitzer, fertiges Gerät
+<div style="display: flex; align-items: flex-start; gap: 5px;">
+<img src="media/image1.jpeg" alt="" width="30%">
+<img src="media/image2.jpeg" alt="" width="30%">
+<img src="media/image3.jpeg" alt="" width="30%">
+</div>
+<p>Abbildung 1: GPS pps Blitzer, fertiges Gerät</p>
 
 **Funktionalität:**
 
@@ -191,7 +194,8 @@ Anzahl 1-Bits ungerade, Parität = 1:\
 Gesamtzahl der Einsen mit Parität gerade, das heißt gerade Parität\
 Das Paritätsbit wird bei gerader Parität so berechnet, dass die Gesamtanzahl der Einsen gerade ist.
 
-![](docs/media/image4.png){width="6.297916666666667in" height="1.1805555555555556in"}Abbildung 2: Modus #86, Minute 35
+<img src="media\image4.png" alt="" width="100%">
+<p>Abbildung 2: Modus #86, Minute 35</p>
 
 Die Sequenzen #82 bis #85 haben diesen fehlenden Blitz an letzter Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter feststellen.
 
@@ -224,18 +228,16 @@ PyOTE: ![](docs/media/image5.png){width="3.042361111111111in" height="1.09583333
 
 **Elektrische Übersicht:**
 
-![](docs/media/image6.png){width="6.297916666666667in" height="5.361805555555556in"}
-
-Abbildung 3: Elektrischer Zusammenhang illustriert
+<img src="media/image6.png" alt="" width="80%">
+<p>Abbildung 3: Elektrischer Zusammenhang illustriert</p>
 
 **Elektrischer Aufbau:**
 
 [Schaltplan]{.underline} Verbindungs-Leiterplatte (1PPS_Teiler_v5_pro.sch)\
 Diese Leiterplatte dient hauptsächlich dazu die Verbindungen zwischen den Geräten mit Steckverbindungen zu realisieren. So können die gezeigten modularen Komponenten des nur teils gelöteten Geräts leicht ausgetauscht, getestet oder bei Defekt ersetzt werden. Wer sichere elektrische Verbindungen bevorzugt, kann mehr oder alles als Lötverbindung ausführen. Steckverbindungen mit Stiftleisten und Buchsenleisten sind aber ausreichend.
 
-![](docs/media/image7.png){width="6.297916666666667in" height="3.542361111111111in"}
-
-Abbildung 4: Schaltplan der Verbindungsleiterplatte mit EAGLE \[1\]
+<img src="media/image7.png" alt="" width="100%">
+<p>Abbildung 4: Schaltplan der Verbindungsleiterplatte mit EAGLE [1]</p>
 
 Hinweis: Der Widerstand R7 muß in die Leitung gelötet werden, nicht auf die Platine bei Leiterplatte 1PPS_Teiler_v5_pro! Erst bei 1PPS_Teiler_v6_pro ist das design passend geändert, aber noch nicht verfügbar.
 
@@ -271,9 +273,12 @@ Tabelle 2: Teileliste
 
 [Leiterplatte:]{.underline} 1PPS_Teiler_v5_pro.brd
 
-![](docs/media/image8.png){width="1.8402777777777777in" height="3.6277777777777778in"} ![](docs/media/image9.png){width="1.8402777777777777in" height="3.60625in"} ![](docs/media/image10.png){width="1.8402777777777777in" height="3.6277777777777778in"}
-
-Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) \[1\]
+<div style="display: flex; align-items: flex-start; gap: 5px;">
+<img src="media/image8.png" alt="" width="30%">
+<img src="media/image9.png" alt="" width="30%">
+<img src="media/image10.png" alt="" width="30%">
+</div>
+<p>Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) [1]</p>
 
 **Programmierung:**
 
@@ -297,9 +302,8 @@ Das linke Zählerrad wird an D2 ... D5 und an GND gesteckt, das rechte an D9 ...
 Achtung!: Sowohl in die Leitung zu D8 als auch vom (linken) BCD Kodierrad zum GND Pin muß ein 2200 Ohm Widerstand eingelötet werden! An GND geschieht dies zum Schutz des ports D9 und an D8 damit die NMEA Daten zuverlässig gelesen werden.
 
 Die Spannung für den Tiefentladeschutz wird an A7 gelesen und die Abschaltung über A5 getätigt. Der Arduino NANO schaltet die gesamte Stromversorgung über eine Schaltung mit zwei Transistoren bis auf einen kleinen Reststrom ab.\
-![](docs/media/image11.png){width="6.2875in" height="4.223611111111111in"}
-
-Abbildung 6: Elektrische Verbindungen
+<img src="media/image11.png" alt="" width="100%">
+<p>Abbildung 6: Elektrische Verbindungen</p>
 
 **Zusammenbau:**
 
@@ -307,22 +311,19 @@ Es ist erforderlich schon Erfahrung mit Elektroniklöten gemacht zu haben!\
 Auch mechanische Handfertigkeit ist sehr von Vorteil.\
 Wichtig: Beim Löten, besonders bei den Leitungen während des Lötens die Bauteile nie berühren, sondern vor dem Löten fixieren (Klammern, Kreppklebeband). „Kalte Lötstellen" führen zum früheren Ausfall oder zum Nichtfunktionieren des fertigen Geräts. Nur so heiß löten wie erforderlich. Das Lot darf fast keinen Rauch abgeben und eine Lötung muß nach wenigen Sekunden fertig sein. Das Lot muß fließen und erkaltet eine glänzende Oberfläche haben. Die Lötstelle nicht bewegen bis das Lot fest ist!
 
-![](docs/media/image12.jpeg){width="6.2555555555555555in" height="2.063888888888889in"}
-
-Abbildung 7: Löten von Kabeln und Pins
+<img src="media/image12.jpeg" alt="" width="100%">
+<p>Abbildung 7: Löten von Kabeln und Pins</p>
 
 Diese Steckverbindungen müssen angefertigt werden, eine hat einen 2200 Ohm Widerstand:
 
-![](docs/media/image13.jpeg){width="6.2444444444444445in" height="1.542361111111111in"}
-
-Abbildung 8: Benötigte Steckverbindungen
+<img src="media/image13.jpeg" alt="" width="100%">
+<p>Abbildung 8: Benötigte Steckverbindungen</p>
 
 Es werden Schnittlängen (mm) für die flexiblen Leitungen gemäß Grafik vorgeschlagen.\
 Es sollten eher kürzere als längere Maße verwendet werden.
 
-![](docs/media/image14.jpeg){width="6.297916666666667in" height="5.308333333333334in"}
-
-Abbildung 9: Leitungslängen und -arten illustriert
+<img src="media/image14.jpeg" alt="" width="100%">
+<p>Abbildung 9: Leitungslängen und -arten illustriert</p>
 
 Farben zur Visualisierung können von Farben der Leitungen abweichen!
 
@@ -337,9 +338,8 @@ Nach dem Löten überstehende Drähte auf Leiterseite kürzen bis zur Lötstelle
 Der Pin „RX" wird nicht verwendet und bleibt frei.\
 Alle anderen Pinstifte werden mit Leitungen belegt.
 
-![](docs/media/image15.jpeg){width="6.2555555555555555in" height="1.542361111111111in"}
-
-Abbildung 10: Leiterplatte für Verbindungen der Geräte
+<img src="media/image15.jpeg" alt="" width="100%">
+<p>Abbildung 10: Leiterplatte für Verbindungen der Geräte</p>
 
 **Kodierräder und DC-DC Wandler:**
 
@@ -349,9 +349,8 @@ Achtung!: In die gemeinsame Masseleitung muß ein 2200 Ohm Widerstand eingelöte
 
 Die vier äußeren, überstehenden Stifte an der Gehäuseseite vorsichtig bündig abschneiden. Dabei nicht die vier Kunststoffniete beschädigen, die das Gehäuse zusammen halten.
 
-![](docs/media/image16.jpeg){width="6.2444444444444445in" height="2.053472222222222in"}
-
-Abbildung 11: Bündelleitung an Kodierrädern und DC-DC-Wandler
+<img src="media/image16.jpeg" alt="" width="100%">
+<p>Abbildung 11: Bündelleitung an Kodierrädern und DC-DC-Wandler<p>
 
 **Arduino NANO:**
 
@@ -359,9 +358,8 @@ Stiftleisten auf der dem Reset-Taster und LEDs [gegenüber]{.underline} liegende
 Die LED „POW" sowie „TX" mit undurchsichtigem Material abdecken (Isolierband, Schrumpfschlauch, „flüssiges Gummi"). Ihr Licht stört die Anzeige der LED „L" welche später eine schwache Batterie oder ungültige NMEA-Daten anzeigt.\
 Die Pins RST und A6 bleiben später frei.
 
-![](docs/media/image17.jpeg){width="6.2555555555555555in" height="1.5319444444444446in"}
-
-Abbildung 12: Stift- und Buchsenleisten am Arduino NANO und dem GPS-Modul
+<img src="media/image17.jpeg" alt="" width="100%">
+<p>Abbildung 12: Stift- und Buchsenleisten am Arduino NANO und dem GPS-Modul</p>
 
 **GPS-Modul:**
 
@@ -375,33 +373,29 @@ Antennenkabel geeignet ohne Knicke verlegen! Die Antenne paßt zwischen Potentio
 Das integrierte Ladegerät wird über den USB-C Anschluß versorgt und ist direkt mit dem Akku verbunden. Eine rote LED bedeutet, daß geladen wird, eine orange LED, daß der Akku vollgeladen ist. Die Ladedauer beträgt etwa 2 Stunden.\
 Hinweis: Damit die LED des Lademoduls sich an bestimmter Stelle befinden, wird empfohlen die Leitungen an den USB-Anschluß als Draht auszuführen.
 
-![](docs/media/image18.jpeg){width="6.2555555555555555in" height="2.063888888888889in"}
-
-Abbildung 13: Ladegerät für den LiFePo4 Akkumulator
+<img src="media/image18.jpeg" alt="" width="100%">
+<p>Abbildung 13: Ladegerät für den LiFePo4 Akkumulator</p>
 
 **Gehäuse:**
 
 Für die mechanischen Arbeiten werden hier einige hilfreiche Tips gegeben. Man hat am besten eine kleine Werkstatt und Basiswerkzeuge (Feilen, Sägen, Fräser, Stechbeitel, Schleifpapier, Tischbohrmaschine, kleine Handbohrmaschine, Schraubstock, Werktisch). Je weniger Werkzeuge verfügbar sind, desto geschickter muß man damit umgehen können!
 
-![](docs/media/image19.png){width="6.297916666666667in" height="5.085416666666666in"}
-
-Abbildung 14: Gehäuse Maßzeichnung
+<img src="media/image19.png" alt="" width="100%">
+<p>Abbildung 14: Gehäuse Maßzeichnung</p>
 
 Die rechteckige Öffnung für die **Kodierräder** muß sehr genau positioniert (0,5mm) und als Preßpassung ausgeführt werden. Andernfalls müssen die Kodierräder innen mit Heißkleber fixiert werden.\
 Die künftige Aussparung anreißen. Dazu die Fläche mit Klebeband abdecken, damit die Ritzungen das Gehäuse nicht beschädigen. Zunächst die Fräsungen mit Untermaß auf einer Tischbohrmaschine fertigen, indem man das Werkstück an einem Führungsklotz entlang führt. Zug um Zug die Löcher stirnfäsen und diese dann mithilfe der Führung seitenfräsen.
 
-![](docs/media/image20.jpeg){width="6.2555555555555555in" height="1.2236111111111112in"}
-
-Abbildung 15: Anfertigen der Öffnung im Gehäuse für die Kodierräder
+<img src="media/image20.jpeg" alt="" width="100%">
+<p>Abbildung 15: Anfertigen der Öffnung im Gehäuse für die Kodierräder</p>
 
 Die Feinarbeit geschieht mit einer rechteckigen Schlüsselfeile bis zum Spielmaß. Dabei stets mit Meßschieber nachmessen, damit eine Preßpassung für die Zählräder an der langen Seite entsteht!
 
 In gleicher Weise den Schlitz für den **USB-Ladeanschluß** anbringen.\
 Mit einer 3 mm Rundfeile von außen zu den Schraublöchern hin eine Fase anbringen, damit das USB-Bauteil bündig am Gehäuse anliegt. Das USB-Bauteil anlegen und die 2 mm Bohrungen passend anbringen. Dazu für die zweite Bohrung eine Schraube einsetzen.
 
-![](docs/media/image21.jpeg){width="4.489583333333333in" height="2.223611111111111in"}
-
-Abbildung 16: Anfertigung der Öffnung im Gehäuse für den USB-C Ladeanschluß
+<img src="media/image21.jpeg" alt="" width="100%">
+<p>Abbildung 16: Anfertigung der Öffnung im Gehäuse für den USB-C Ladeanschluß</p>
 
 Für das **Schalt-Drehpotentiometer** ist in der Höhe 0,1 mm Genauigkeit erforderlich, sonst paßt später der Deckel nicht darauf. Wenn er zuletzt doch nicht paßt, innen am Deckel eine flache Fräsung oder Anschliff mit Feinmechanik-Handschleifer (D \~15mm) anbringen oder das Loch mit Rundfeile entsprechend erweitern.
 
@@ -409,9 +403,8 @@ Der **Batteriehalter** paßt nicht ganz in die Gehäuseflanke. Mit einem Stechbe
 
 Die Positionen für die LED-Linsen im **Gehäusedeckel** müssen möglicherweise im Millimeter­bereich gegenüber der Maßzeichnung angepaßt werden. Diese Arbeit also erst kurz vor Vollendung nachholen. Die 3 Löcher anreißen und auf 10 mm mit einem Stufenbohrer aufbohren. Dann mit einer 10 mm Rundfeile eine Preßpassung für die Linsen herstellen. Achtung: Die Linse muß beim GPS und beim Arduino NANO bündig zur Deckelinnenseite gekürzt werden. Andernfalls könnte Druck auf das GPS-Modul ausgeübt werden und beim Arduino der Reset-Taster gedrückt werden. Es sollte auch an eine Abflachung an der Deckelinnenseite am Ort des Reset-Tasters des Arduino NANO gedacht werden.
 
-![](docs/media/image22.jpeg){width="4.489583333333333in" height="2.223611111111111in"}
-
-Abbildung 17: Anfertigung der Öffnung im Gehäusedeckel für die „Linsen"
+<img src="media/image22.jpeg" alt="" width="100%">
+<p>Abbildung 17: Anfertigung der Öffnung im Gehäusedeckel für die „Linsen“</p>
 
 Wer die LED-Linsen nicht verwenden will kann auch wie folgt vorgehen:\
 Am Gehäusedeckel an den Positionen der LEDs Löcher bohren (5mm), beidseits entgraten und mit klarem Heißkleber verschließen. So entstehen etwas opake Sichtfenster.\
@@ -441,9 +434,8 @@ Die Öse befestigen.
 
 Die Leitungen der Kodierräder durch das Loch fädeln und die Kodierräder einpressen, wenn nötig mit Heißkleber innen fixieren.
 
-![](docs/media/image23.jpeg){width="6.2555555555555555in" height="1.542361111111111in"}
-
-Abbildung 18: Unterbringung der einzelnen Geräte im Gehäuse
+<img src="media/image23.jpeg" alt="" width="100%">
+<p>Abbildung 18: Unterbringung der einzelnen Geräte im Gehäuse</p>
 
 Alle Steckverbindungen wie folgt richtig aufstecken: (port Name/Leiterplatte)\
 vom Ladegerät (B+, B-) zur Leiterplatte (+3,6V_CHG)\
