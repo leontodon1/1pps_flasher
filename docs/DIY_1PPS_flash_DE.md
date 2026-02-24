@@ -346,7 +346,7 @@ PyOTE: <img src="media/image5.png" alt="" width="40%">
 <img src="media/image6.png" alt="" width="80%">
 <p>Abbildung 3: Elektrischer Zusammenhang illustriert</p>
 
-**Elektrischer Aufbau:**
+**Leiterplatte:**
 
 <u>Schaltplan</u> Verbindungs-Leiterplatte (1PPS_Teiler_v5_pro.sch)\
 Diese Leiterplatte dient hauptsächlich dazu die Verbindungen zwischen den Geräten mit Steckverbindungen zu realisieren. So können die gezeigten modularen Komponenten des nur teils gelöteten Geräts leicht ausgetauscht, getestet oder bei Defekt ersetzt werden. Wer sichere elektrische Verbindungen bevorzugt, kann mehr oder alles als Lötverbindung ausführen. Steckverbindungen mit Stiftleisten und Buchsenleisten sind aber ausreichend.
@@ -381,7 +381,7 @@ Tabelle 2: Teileliste
 <img src="media/image9.png" alt="" width="30%">
 <img src="media/image10.png" alt="" width="30%">
 </div>
-<p>Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) [1]</p>
+<p>Abbildung 5: Leiterplatte - Leiterseite, Bestückung, kombiniert (EAGLE) [1]</p>
 
 **Programmierung:**
 
