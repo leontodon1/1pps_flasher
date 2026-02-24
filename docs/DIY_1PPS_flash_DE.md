@@ -1,12 +1,8 @@
-<h1 style="line-height:1.1; margin:0;">
-Gerät mit GPS pps Blitz<br>
-für das Setzen von optischen Zeitstempeln<br>
-in astronomischen Videos von Digitalkameras
-</h1>
+**Gerät mit GPS pps Blitz\
+für das Setzen von optischen Zeitstempeln\
+in astronomischen Videos von Digitalkameras**
 
-<h2 style="margin-top:0.5em;">
-Björn Kattentidt - IOTA/ES - <a href="mailto:bjoern@kattentidt-astro.de">bjoern@kattentidt-astro.de</a>
-</h2>
+Björn Kattentidt - IOTA/ES - bjoern@kattentidt-astro.de
 
 **Motivation:**
 
@@ -307,6 +303,7 @@ Gesamtzahl der Einsen mit Parität gerade, das heißt gerade Parität\
 Das Paritätsbit wird bei gerader Parität so berechnet, dass die Gesamtanzahl der Einsen gerade ist.
 
 <img src="docs/media/image4.png" style="width:6.29792in;height:1.18056in" />
+
 Abbildung 2: Modus \#86, Minute 35
 
 Die Sequenzen \#82 bis \#85 haben diesen fehlenden Blitz an letzter Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter feststellen.
@@ -521,7 +518,7 @@ Wer die LED-Linsen nicht verwenden will kann auch wie folgt vorgehen:\
 Am Gehäusedeckel an den Positionen der LEDs Löcher bohren (5mm), beidseits entgraten und mit klarem Heißkleber verschließen. So entstehen etwas opake Sichtfenster.\
 Am besten verwendet man dazu 2 Stück Teflon (0,5mm Stärke), legt eines unter den Deckel auf einen Metalltisch und drückt den Deckel fest an den Tisch. Dann gibt man eine passende Menge Heißkleber in das Loch, legt geschwind das zweite Stück Teflon oben auf und preßt mit einem Finger im Handschuh (heiß!) für etwa 20 Sekunden fest darauf. Nach einer weiteren Minute vorsichtig das Teflon entfernen. Außen sollte nun kein Überstand vorhanden sein, sonst diesen außen und wenn nötig auch innen mit Stechbeitel vorsichtig glätten. Bei Nichtgefallen kann man ausbohren und es erneut versuchen oder die Löcher vergrößern.
 
-> **Finaler Zusammenbau:**
+**Finaler Zusammenbau:**
 
 Die Pin-Stiftleisten mit Länge 6 und 12 am Ardiono NANO löten wie beschrieben und die 5-Pin-Buchsenleiste am GPS-Modul.
 
