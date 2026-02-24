@@ -77,7 +77,7 @@ Bei vollem Akku wird das Gerät ca. 7 Stunden blitzen wobei die letzte halbe bis
 Ein Tiefentladeschutz ist implementiert. Bei geringer Spannung (3,1 V) blinkt die obere Status-LED in schneller Folge (4 Hertz). Bei Entladeschlußspannung (2,8 V) schaltet sich das Gerät in den Ruhemodus. Ist der Tiefentladeschutz aktiviert, gehen alle LED aus. Es fließt aber noch ein Reststrom wodurch der Akku nach weiteren 2 Tagen tiefentladen wird. <u>Daher muß das Gerät immer per Schalter ausgeschaltet werden, denn eine einzige Tiefentladung kann den LiFePo4 Akku zerstören.</u>\
 Das Gerät kann reaktiviert werden, indem man es am Drehknopf ausschaltet, und wieder anschaltet. Geht es sofort wieder aus mit dem Anschalten ein paar Sekunden warten.
 
-**Verwendungsablauf:**
+**Übliche Benutzung:**
 
 Gerät an der Öse aufhängen oder mit Öse zum Zenit aufstellen, dann hat das GPS optimalen Empfang.
 
@@ -306,7 +306,8 @@ Anzahl 1-Bits ungerade, Parität = 1:\
 Gesamtzahl der Einsen mit Parität gerade, das heißt gerade Parität\
 Das Paritätsbit wird bei gerader Parität so berechnet, dass die Gesamtanzahl der Einsen gerade ist.
 
-<img src="docs/media/image4.png" style="width:6.29792in;height:1.18056in" />Abbildung 2: Modus \#86, Minute 35
+<img src="docs/media/image4.png" style="width:6.29792in;height:1.18056in" />
+Abbildung 2: Modus \#86, Minute 35
 
 Die Sequenzen \#82 bis \#85 haben diesen fehlenden Blitz an letzter Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter feststellen.
 
