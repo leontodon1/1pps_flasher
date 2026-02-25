@@ -53,9 +53,9 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 
 - Zweitlösung für Zeitmarken in Bedeckungsvideos, wenn das primäre Zeitsystem aus technischen Gründen plötzlich ausfällt
 
--	Öse zum Aufhängen mit richtiger Position der GPS Antenne
+- Öse zum Aufhängen mit richtiger Position der GPS Antenne
 
--	Band zum Aufhängen und zur Fixierung des LED Kabels
+- Band zum Aufhängen und zur Fixierung des LED Kabels
 
 <div style="display: flex; align-items: flex-start; gap: 5px;">
 <img src="media/image1.jpeg" alt="" width="30%">
@@ -385,7 +385,7 @@ Tabelle 2: Teileliste
 <img src="media/image9.png" alt="" width="30%">
 <img src="media/image10.png" alt="" width="30%">
 </div>
-<p>Abbildung 5: Leiterplatte - Leiterseite, Bestückung, kombiniert (EAGLE) [1]</p>
+<p>Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) [1]</p>
 
 **Programmierung:**
 
@@ -395,12 +395,11 @@ Zum Programmieren wurde die Arduino IDE \[3\] verwendet.
 
 Es wurden folgende externe Bibliotheken im Kode eingebunden: \#include\
 \<AltSoftSerial.h\> \[4\], sehr stabile, serielle Schnittstelle für GPS (Timer-basiert)\
-\<TinyGPS++.h\> \[5\], parsen von NMEA-GPS-Daten (Zeit, Status)
-
+\<TinyGPS++.h\> \[5\], parsen von NMEA-GPS-Daten (Zeit, Status)\
 AltSoftSerial ist pin-fest verdrahtet (Arduino Nano): RX = Pin D8\
 Nicht kompatibel mit Boards wie ESP32, ESP8266 oder Leonardo ohne Anpassung.
 
-Alle anderen Dinge im Kode kommen dem Arduino-Standard-Core aus.
+Alle anderen Funktionen im Kode kommen dem Arduino-Standard-Core aus.
 
 **Signalfluß:**
 
