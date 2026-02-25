@@ -360,7 +360,7 @@ Selbstbauanleitung - DIY
 Diese Leiterplatte dient hauptsächlich dazu die Verbindungen zwischen den Geräten mit Steckverbindungen zu realisieren. So können die gezeigten modularen Komponenten des nur teils gelöteten Geräts leicht ausgetauscht, getestet oder bei Defekt ersetzt werden. Wer sichere elektrische Verbindungen bevorzugt, kann mehr oder alles als Lötverbindung ausführen. Steckverbindungen mit Stiftleisten und Buchsenleisten sind aber ausreichend.
 
 <img src="media/image7.png" alt="" width="100%">
-<p>Abbildung 4: Schaltplan der Verbindungsleiterplatte mit EAGLE [1]</p>
+<p>Abbildung 4: Schaltplan der Verbindungsleiterplatte mit EAGLE [3]</p>
 
 Hinweis: Der Widerstand R7 muß in die Leitung gelötet werden, nicht auf die Platine bei Leiterplatte 1PPS_Teiler_v5_pro! Erst bei 1PPS_Teiler_v6_pro ist das design passend geändert, aber noch nicht verfügbar.
 
@@ -389,7 +389,7 @@ Tabelle 2: Teileliste
 <img src="media/image9.png" alt="" width="30%">
 <img src="media/image10.png" alt="" width="30%">
 </div>
-<p>Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) [1]</p>
+<p>Abbildung 5: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) [3]</p>
 
 **Programmierung:**
 
@@ -412,6 +412,7 @@ Das linke Zählerrad wird an D2 … D5 und an GND gesteckt, das rechte an D9 …
 Achtung!: Sowohl in die Leitung zu D8 als auch vom (linken) BCD Kodierrad zum GND Pin muß ein 2200 Ohm Widerstand eingelötet werden! An GND geschieht dies zum Schutz des ports D9 und an D8 damit die NMEA Daten zuverlässig gelesen werden.
 
 Die Spannung für den Tiefentladeschutz wird an A7 gelesen und die Abschaltung über A5 getätigt. Der Arduino NANO schaltet die gesamte Stromversorgung über eine Schaltung mit zwei Transistoren bis auf einen kleinen Reststrom ab.\
+
 <img src="media/image11.png" alt="" width="100%">
 <p>Abbildung 6: Elektrische Verbindungen</p>
 
@@ -620,18 +621,22 @@ Es wurde gezeigt, daß mit einer einfachen Idee eine kostengünstige Methode fü
 
 **Quellen:**
 
-\[1\] EAGLE, <https://en.eagle.cool/download>
-
-\[2\] open-source code 1pps flasher\
+\[1\] open-source code 1pps flasher\
 <https://github.com/leontodon1/1pps_flasher>
 
-\[3\] Arduino IDE 2.3.7, Programmierung Arduino NANO\
+\[2\] PyMovie, PyOTE\
+<https://occultations.org/documents/Windows-PyMovie-PyOTE-Anaconda3-installation%202020%20updated%2012-2020%20.pdf>\
+<https://pypi.org/project/pymovie/>
+
+\[3\] EAGLE, <https://en.eagle.cool/download>
+
+\[4\] Arduino IDE 2.3.7, Programmierung Arduino NANO\
 <https://www.arduino.cc/en/software/>
 
-\[4\] AltSoftSerial.h: open-source, Paul Stoffregen,\
+\[5\] AltSoftSerial.h: open-source, Paul Stoffregen,\
 <https://github.com/PaulStoffregen/AltSoftSerial/blob/master/AltSoftSerial.h>
 
-\[5\] TinyGPS++.h: open-source, Mikal Hart,\
+\[6\] TinyGPS++.h: open-source, Mikal Hart\
 <https://github.com/mikalhart/TinyGPSPlus>
 
 **Version:**
