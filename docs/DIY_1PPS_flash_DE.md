@@ -638,8 +638,9 @@ Datum: 2026/02
 
 **Bildliste:**
 
+| Abbildung | Beschreibung |
+|--------|------------|
 | Abbildung 1: | GPS pps Blitzer, fertiges Gerät |
-|----|----|
 | Abbildung 2: | Modus \#86, Minute 35 |
 | Abbildung 3: | Elektrischer Zusammenhang illustriert |
 | Abbildung 4: | Schaltplan der Verbindungsleiterplatte mit EAGLE |
@@ -660,8 +661,9 @@ Datum: 2026/02
 
 **Glossar:**
 
+| Abkürzung | Beschreibung |
+|--------|------------|
 | Arduino NANO | Mikrocontroller Typ |
-|----|----|
 | BCD | Binary Coded Decimals, 0 bis 10 binär kodiert auf 4 bit |
 | DC-DC | Direct Current, Gleichstromwandler |
 | EXTA | Exposure Timing Analyzer |

@@ -104,7 +104,7 @@ First set the coding wheels to \#00 and adjust the required brightness on the po
 
 Then set the desired mode. You can switch to any other mode at any time using the two coding wheels. After one second, the signal will be correct.
 
-sThe device can now be used to set millisecond-accurate timestamps visually.
+The device can now be used to set millisecond-accurate timestamps visually.
 
 <u>After use, switch off the device again using the rotary knob!</u>
 
@@ -318,7 +318,7 @@ MSB x x x x LSB, LSB comes first in time\
 The parity bit is therefore calculated for even parity so that the total number of ones is even.
 
 <img src="media\image4.png" alt="" width="100%">
-<p>Figure 2: Mode \#86, minute 35</p>
+<p>Figure 2: Mode #86, minute 35</p>
 
 Sequences \#82 to \#85 have this missing flash at the end of the minute sequence. This makes it easier to determine the start of the minute.
 
@@ -375,15 +375,17 @@ Datum: 2026/02
 
 **List of figures:**
 
+| Abbreviation | Description |
+|--------|------------|
 | Figure 1: | GPS pps-flasher, finished device  |
-|-----------|-----------------------------------|
 | Figure 2: | Modus \#86, Minute 35             |
 | Figure 3: | Electrical connection illustrated |
 
 **Glossar:**
 
+| Abbreviation | Description |
+|--------|------------|
 | Arduino NANO | Microcontroller type |
-|----|----|
 | BCD | Binary Coded Decimals, 0 to 10 binary coded on 4 bits |
 | DC-DC | Direct Current, DC converter |
 | EXTA | Exposure Timing Analyzer |
