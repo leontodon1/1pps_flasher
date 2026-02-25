@@ -394,6 +394,7 @@ Datum: 2026/02
 | LED | Light Emitting Diode |
 | LiFePo4 | Lithium iron phosphate battery type |
 | LSB | Least Significant Bit |
+| LUT | Look Up Table |
 | MSB | Most Significant Bit |
 | NMEA | National Marine Electronics Association, standard for GPS data |
 | open source | Open, freely available, may be modified |
