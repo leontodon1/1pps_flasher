@@ -649,6 +649,8 @@ It has been shown that a simple idea can be used to create a cost-effective meth
 \[6\] TinyGPS++.h: open-source, Mikal Hart\
 <https://github.com/mikalhart/TinyGPSPlus>
 
+Translation with [deeple.com]<https://www.deepl.com/de/translator)>
+
 **Version:**
 
 Arduino: v61\
