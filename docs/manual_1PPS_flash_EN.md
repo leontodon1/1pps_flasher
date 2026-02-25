@@ -367,7 +367,8 @@ It has been shown that a simple idea can be used to create a cost-effective meth
 <https://occultations.org/documents/Windows-PyMovie-PyOTE-Anaconda3-installation%202020%20updated%2012-2020%20.pdf>\
 <https://pypi.org/project/pymovie/>
 
-Translation with [deeple.com]<https://www.deepl.com/de/translator)>
+Translation with [deeple.com]\
+<https://www.deepl.com/de/translator)>
 
 **Version:**
 
