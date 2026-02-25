@@ -49,7 +49,7 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
   bis zu einigen Minuten bei ungünstigem Empfang\
   Mittleres Fenster: pps GPS Bereitschaft durch invertiert blinkende LED
 
-- Schritt für Schritt Anleitung zum Selbstbau auf github.com \[2\]
+- Schritt für Schritt Anleitung zum Selbstbau auf github.com \[2\], open source
 
 - Zweitlösung für Zeitmarken in Bedeckungsvideos, wenn das primäre Zeitsystem aus technischen Gründen plötzlich ausfällt
 
