@@ -362,7 +362,9 @@ PyOTE: <img src="media/image5.png" alt="" width="40%">
 <img src="media/image6.png" alt="" width="80%">
 <p>Figure 3: Electrical connection illustrated</p>
 
-**DIY instructions**
+<h2 style="margin-top:0.5em;">
+Selbstbauanleitung - DIY
+</h2>
 
 **Connection circuit board:**
 
