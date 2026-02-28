@@ -325,6 +325,12 @@ Das Paritätsbit wird also bei gerader Parität so berechnet, dass die Gesamtanz
 <img src="media\image4.png" alt="" width="100%">
 <p>Abbildung 2: Modus #86, Minute 35</p>
 
+<img src="media\image4.png" alt="" width="100%">
+<p>Abbildung 3: Mode #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE</p>
+
+<img src="media\image4.png" alt="" width="100%">
+<p>Abbildung 4: Mode #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE</p>
+
 Die Sequenzen \#82 bis \#85 haben diesen fehlenden Blitz an letzter Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter feststellen.
 
 Vorteil der Sonderfunktionen liegt in der geringeren Störung der Lichtkurve durch die Blitze im Gegensatz zu einem Blitz in jeder Sekunde.\
@@ -357,7 +363,7 @@ PyOTE: <img src="media/image5.png" alt="" width="40%">
 **Elektrische Übersicht:**
 
 <img src="media/image6.png" alt="" width="80%">
-<p>Abbildung 3: Elektrischer Zusammenhang illustriert</p>
+<p>Abbildung 5: Elektrischer Zusammenhang illustriert</p>
 
 **Zusammenfassung:**
 
@@ -382,7 +388,9 @@ Datum: 2026/02
 |--------|------------|
 | Abbildung 1: | GPS pps Blitzer, fertiges Gerät |
 | Abbildung 2: | Modus \#86, Minute 35 |
-| Abbildung 3: | Elektrischer Zusammenhang illustriert |
+| Abbildung 3: | Mode #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE |
+| Abbildung 4: | Mode #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE |
+| Abbildung 5: | Elektrischer Zusammenhang illustriert |
 
 **Glossar:**
 
@@ -390,6 +398,7 @@ Datum: 2026/02
 |--------|------------|
 | Arduino NANO | Mikrocontroller Typ |
 | BCD | Binary Coded Decimals, 0 bis 10 binär kodiert auf 4 bit |
+| C11 | Celestron 11 Zoll |
 | DC-DC | Direct Current, Gleichstromwandler |
 | EXTA | Exposure Timing Analyzer |
 | GPS | Global Positioning System |

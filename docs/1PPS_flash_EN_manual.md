@@ -328,6 +328,12 @@ The parity bit is therefore calculated for even parity so that the total number 
 <img src="media\image4.png" alt="" width="100%">
 <p>Figure 2: Mode #86, minute 35</p>
 
+<img src="media\image4b.png" alt="" width="100%">
+<p>Figure 3: Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE, C11</p>
+
+<img src="media\image4c.png" alt="" width="100%">
+<p>Figure 4: Mode #86, minute 23, weak flash, real measurement (C11) using PyOTE</p>
+
 Sequences \#82 to \#85 have this missing flash at the end of the minute sequence. This makes it easier to determine the start of the minute.
 
 The advantage of the special functions is that the light curve is less disturbed by the flashes than if there were a flash every second.\
@@ -360,7 +366,7 @@ PyOTE: <img src="media/image5.png" alt="" width="40%">
 **Electrical overview:**
 
 <img src="media/image6.png" alt="" width="80%">
-<p>Figure 3: Electrical connection illustrated</p>
+<p>Figure 5: Electrical connection illustrated</p>
 
 **Summary:**
 
@@ -390,7 +396,9 @@ Datum: 2026/02
 |--------|------------|
 | Figure 1: | GPS pps-flasher, finished device  |
 | Figure 2: | Modus \#86, Minute 35             |
-| Figure 3: | Electrical connection illustrated |
+| Figure 3: | Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE, C11 |
+| Figure 4: | Mode #86, minute 23, weak flash, real measurement (C11) using PyOTE |
+| Figure 5: | Electrical connection illustrated |
 
 **Glossar:**
 
@@ -398,6 +406,7 @@ Datum: 2026/02
 |--------|------------|
 | Arduino NANO | Microcontroller type |
 | BCD | Binary Coded Decimals, 0 to 10 binary coded on 4 bits |
+| C11 | Celestron 11 inch |
 | DC-DC | Direct Current, DC converter |
 | EXTA | Exposure Timing Analyzer |
 | fps | fits per second |

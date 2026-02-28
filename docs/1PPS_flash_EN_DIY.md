@@ -328,6 +328,12 @@ The parity bit is therefore calculated for even parity so that the total number 
 <img src="media\image4.png" alt="" width="100%">
 <p>Figure 2: Mode \#86, minute 35</p>
 
+<img src="media\image4b.png" alt="" width="100%">
+<p>Figure 3: Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE, C11</p>
+
+<img src="media\image4c.png" alt="" width="100%">
+<p>Figure 4: Mode #86, minute 23, weak flash, real measurement (C11) using PyOTE</p>
+
 Sequences \#82 to \#85 have this missing flash at the end of the minute sequence. This makes it easier to determine the start of the minute.
 
 The advantage of the special functions is that the light curve is less disturbed by the flashes than if there were a flash every second.\
@@ -360,7 +366,7 @@ PyOTE: <img src="media/image5.png" alt="" width="40%">
 **Electrical overview:**
 
 <img src="media/image6.png" alt="" width="80%">
-<p>Figure 3: Electrical connection illustrated</p>
+<p>Figure 5: Electrical connection illustrated</p>
 
 <h2 style="margin-top:0.5em;">
 Selbstbauanleitung - DIY
@@ -372,7 +378,7 @@ Connection circuit board <u>schematic</u> (1PPS_Teiler_v5_pro.sch)\
 This circuit board is mainly used to establish connections between devices with plug connections. This makes it easy to exchange, test, or replace the modular components of the only partially soldered device shown in the event of a defect. Those who prefer secure electrical connections can solder more or all of the connections. However, plug connections with pin headers and socket headers are sufficient.
 
 <img src="media/image7.png" alt="" width="100%">
-<p>Figure 4: Circuit diagram of the connection circuit board with EAGLE \[3\]</p>
+<p>Figure 6: Circuit diagram of the connection circuit board with EAGLE \[3\]</p>
 
 Note: Resistor R7 must be soldered into the cable, not onto the board for the 1PPS_Teiler_v5_pro circuit board! The design has been changed accordingly for the 1PPS_Teiler_v6_pro, but this version is not yet available.
 
@@ -401,7 +407,7 @@ Table 2: Parts list
 <img src="media/image9.png" alt="" width="30%">
 <img src="media/image10.png" alt="" width="30%">
 </div>
-<p>Figure 5: Printed circuit board – conductor side, assembly, combined (EAGLE) \[3\]</p>
+<p>Figure 7: Printed circuit board – conductor side, assembly, combined (EAGLE) \[3\]</p>
 
 **Programming:**
 
@@ -427,7 +433,7 @@ Attention: A 2200 ohm resistor must be soldered into both the line to D8 and fro
 The voltage for the deep discharge protection is read at A7 and the shutdown is performed via A5. The Arduino NANO switches off the entire power supply via a circuit with two transistors, except for a small residual current.
 
 <img src="media/image11.png" alt="" width="100%">
-<p>Figure 6: Electrical connections</p>
+<p>Figure 8: Electrical connections</p>
 
 **Assembly:**
 
@@ -437,18 +443,18 @@ Mechanical dexterity is also very advantageous.
 Important: When soldering, especially the wires, never touch the components during soldering, but fix them in place before soldering (clamps, masking tape). “Cold solder joints” will lead to premature failure or malfunction of the finished device. Only solder as hot as necessary. The solder should emit almost no smoke and soldering should be completed within a few seconds. The solder must flow and have a shiny surface when cooled. Do not move the solder joint until the solder is set!
 
 <img src="media/image12.jpeg" alt="" width="100%">
-<p>Figure 7: Soldering cables and pins</p>
+<p>Figure 9: Soldering cables and pins</p>
 
 These plug connections must be made; one has a resistance of 2200 ohms:
 
 <img src="media/image13.jpeg" alt="" width="100%">
-<p>Figure 8: Required plug connections</p>
+<p>Figure 10: Required plug connections</p>
 
 The cutting lengths (mm) for the flexible cables are suggested in the diagram.\
 Shorter rather than longer dimensions should be used.
 
 <img src="media/image14.jpeg" alt="" width="100%">
-<p>Figure 9: Wire lengths and types illustrated</p>
+<p>Figure 11: Wire lengths and types illustrated</p>
 
 Colors used for visualization may differ from actual wire colors!
 
@@ -464,7 +470,7 @@ The “RX” pin is not used and remains free.\
 All other pin pins are connected to wires.
 
 <img src="media/image15.jpeg" alt="" width="100%">
-<p>Figure 10: Circuit board for connecting the devices</p>
+<p>Figure 12: Circuit board for connecting the devices</p>
 
 **Encoding wheels and DC-DC converter:**
 
@@ -475,7 +481,7 @@ Caution: A 2200 ohm resistor must be soldered into the common ground wire to pro
 Carefully cut off the four outer protruding pins on the side of the housing so that they are flush. Be careful not to damage the four plastic rivets that hold the housing together.
 
 <img src="media/image16.jpeg" alt="" width="100%">
-<p>Figure 11: Bundle cable on encoding wheels and DC-DC converter<p>
+<p>Figure 13: Bundle cable on encoding wheels and DC-DC converter<p>
 
 **Arduino NANO:**
 
@@ -486,7 +492,7 @@ Cover the “POW” and ‘TX’ LEDs with opaque material (insulating tape, hea
 The RST and A6 pins remain free for later use.
 
 <img src="media/image17.jpeg" alt="" width="100%">
-<p>Figure 12: Pin and socket strips on the Arduino NANO and the GPS module</p>
+<p>Figure 14: Pin and socket strips on the Arduino NANO and the GPS module</p>
 
 **GPS module:**
 
@@ -503,21 +509,21 @@ The integrated charger is powered via the USB-C port and is directly connected t
 Note: To ensure that the LED of the charging module is located in a specific position, it is recommended that the cables to the USB port be made of wire.
 
 <img src="media/image18.jpeg" alt="" width="100%">
-<p>Figure 13: Charger for the LiFePo4 battery</p>
+<p>Figure 15: Charger for the LiFePo4 battery</p>
 
 **Housing:**
 
 Here are some helpful tips for the mechanical work. It is best to have a small workshop and basic tools (files, saws, milling cutters, chisels, sandpaper, table drill, small hand drill, vise, workbench). The fewer tools you have, the more skilled you need to be in using them!
 
 <img src="media/image19.png" alt="" width="100%">
-<p>Figure 14: Housing dimension drawing</p>
+<p>Figure 16: Housing dimension drawing</p>
 
 The rectangular opening for the **encoding wheels** must be positioned very precisely (0.5 mm) and designed as a press fit. Otherwise, the coding wheels must be fixed inside with hot glue.
 
 Mark out the future recess. Cover the surface with adhesive tape so that the markings do not damage the housing. First, mill the recesses undersize on a bench drill by guiding the workpiece along a guide block. Mill the holes end milling step by step and then side mill them using the guide.
 
 <img src="media/image20.jpeg" alt="" width="100%">
-<p>Figure 15: Making the opening in the housing for the encoding wheels</p>
+<p>Figure 17: Making the opening in the housing for the encoding wheels</p>
 
 The fine work is done with a rectangular key file up to the clearance dimension. Always check with calipers to ensure a press fit for the counting wheels on the long side!
 
@@ -525,7 +531,7 @@ Make the slot for the **USB charging port** in the same way.\
 Use a 3 mm round file to chamfer from the outside towards the screw holes so that the USB component fits flush against the housing. Position the USB component and drill the 2 mm holes accordingly. Use a screw for the second hole.
 
 <img src="media/image21.jpeg" alt="" width="100%">
-<p>Figure 16: Making the opening in the housing for the USB-C charging port</p>
+<p>Figure 18: Making the opening in the housing for the USB-C charging port</p>
 
 The **switch rotary potentiometer** requires 0.1 mm accuracy in height, otherwise the cover will not fit on it later. If it does not fit in the end, make a flat milling or grinding on the inside of the cover with a precision hand grinder (D ~15 mm) or enlarge the hole with a round file.
 
@@ -534,7 +540,7 @@ The **battery holder** does not fit completely into the side of the housing. Use
 The positions for the LED lenses in the **housing cover** may need to be adjusted by a few millimeters compared to the dimensional drawing. Therefore, only do this work shortly before completion. Mark the 3 holes and drill them to 10 mm with a step drill. Then use a 10 mm round file to create a press fit for the lenses. Caution: The lens must be shortened flush with the inside of the cover for the GPS and Arduino NANO. Otherwise, pressure could be exerted on the GPS module and the reset button could be pressed on the Arduino. You should also consider flattening the inside of the cover at the location of the Arduino NANO's reset button.
 
 <img src="media/image22.jpeg" alt="" width="100%">
-<p>Figure 17: Making the opening in the housing cover for the “lenses”</p>
+<p>Figure 19: Making the opening in the housing cover for the “lenses”</p>
 
 If you do not want to use the LED lenses, you can also proceed as follows:\
 Drill holes (5 mm) in the housing cover at the positions of the LEDs, deburr on both sides, and seal with clear hot glue. This creates slightly opaque viewing windows.\
@@ -564,7 +570,7 @@ Attach the eyelet.
 Thread the encoding wheel wires through the hole and press in the encoding wheels, securing them inside with hot glue if necessary.
 
 <img src="media/image23.jpeg" alt="" width="100%">
-<p>Figure 18: Positioning of the individual devices in the housing</p>
+<p>Figure 20: Positioning of the individual devices in the housing</p>
 
 Connect all plug connections correctly as follows: (port name/printed circuit board)\
 From the charger (B+, B-) to the printed circuit board (+3.6V_CHG)\
@@ -674,22 +680,24 @@ Date: 2026/02
 |------------|---------------------------------------------------------------|
 | Figure 1:  | GPS pps speed camera, finished device                         |
 | Figure 2:  | Mode \#86, minute 35                                          |
-| Figure 3:  | Electrical connections illustrated                            |
-| Figure 4:  | Circuit diagram of the connection circuit board with EAGLE    |
-| Figure 5:  | Circuit board conductor side, assembly, combined (EAGLE)      |
-| Figure 6:  | Electrical connections                                        |
-| Figure 7:  | Soldering cables and pins                                     |
-| Figure 8:  | Required plug connections                                     |
-| Figure 9:  | Cable lengths and types illustrated                           |
-| Figure 10: | Circuit board for connecting the devices                      |
-| Figure 11: | Bundle cable on encoding wheels and DC-DC converter           |
-| Figure 12: | Pin and socket strips on the Arduino NANO and the GPS module  |
-| Figure 13: | Charger for the LiFePo4 battery                               |
-| Figure 14: | Housing dimension drawing                                     |
-| Figure 15: | Making the opening in the housing for the encoding wheels     |
-| Figure 16: | Making the opening in the housing for the USB-C charging port |
-| Figure 17: | Making the opening in the housing cover for the “lenses”      |
-| Figure 18: | Placing the individual devices in the housing                 |
+| Figure 3: | Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE, C11 |
+| Figure 4: | Mode #86, minute 23, weak flash, real measurement (C11) using PyOTE |
+| Figure 5: | Electrical connection illustrated |
+| Figure 6:  | Circuit diagram of the connection circuit board with EAGLE    |
+| Figure 7:  | Circuit board conductor side, assembly, combined (EAGLE)      |
+| Figure 8:  | Electrical connections                                        |
+| Figure 9:  | Soldering cables and pins                                     |
+| Figure 10:  | Required plug connections                                     |
+| Figure 11:  | Cable lengths and types illustrated                           |
+| Figure 12: | Circuit board for connecting the devices                      |
+| Figure 13: | Bundle cable on encoding wheels and DC-DC converter           |
+| Figure 14: | Pin and socket strips on the Arduino NANO and the GPS module  |
+| Figure 15: | Charger for the LiFePo4 battery                               |
+| Figure 16: | Housing dimension drawing                                     |
+| Figure 17: | Making the opening in the housing for the encoding wheels     |
+| Figure 18: | Making the opening in the housing for the USB-C charging port |
+| Figure 19: | Making the opening in the housing cover for the “lenses”      |
+| Figure 20: | Placing the individual devices in the housing                 |
 
 **Glossar:**
 
@@ -697,6 +705,7 @@ Date: 2026/02
 |----|----|
 | Arduino NANO | Microcontroller type |
 | BCD | Binary Coded Decimals, 0 to 10 encoded in binary on 4 bits |
+| C11 | Celestron 11 inch |
 | DC-DC | Direct Current, DC converter |
 | EXTA | Exposure Timing Analyzer |
 | fps | Frames per second, images per second |
