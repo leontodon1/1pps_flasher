@@ -395,7 +395,7 @@ Datum: 2026/02
 | Abbreviation | Description |
 |--------|------------|
 | Figure 1: | GPS pps-flasher, finished device  |
-| Figure 2: | Modus \#86, Minute 35             |
+| Figure 2: | Mode #86, Minute 35             |
 | Figure 3: | Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE, C11 |
 | Figure 4: | Mode #86, minute 23, weak flash, real measurement (C11) using PyOTE |
 | Figure 5: | Electrical connection illustrated |

@@ -326,7 +326,7 @@ MSB x x x x LSB, LSB comes first in time\
 The parity bit is therefore calculated for even parity so that the total number of ones is even.
 
 <img src="media\image4.png" alt="" width="100%">
-<p>Figure 2: Mode \#86, minute 35</p>
+<p>Figure 2: Mode #86, minute 35</p>
 
 <img src="media\image4b.png" alt="" width="100%">
 <p>Figure 3: Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE, C11</p>
@@ -679,10 +679,10 @@ Date: 2026/02
 | Figure     | Description                                                   |
 |------------|---------------------------------------------------------------|
 | Figure 1:  | GPS pps speed camera, finished device                         |
-| Figure 2:  | Mode \#86, minute 35                                          |
-| Figure 3: | Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE, C11 |
-| Figure 4: | Mode #86, minute 23, weak flash, real measurement (C11) using PyOTE |
-| Figure 5: | Electrical connection illustrated |
+| Figure 2:  | Mode #86, minute 35                                          |
+| Figure 3:  | Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE, C11 |
+| Figure 4:  | Mode #86, minute 23, weak flash, real measurement (C11) using PyOTE |
+| Figure 5:  | Electrical connection illustrated |
 | Figure 6:  | Circuit diagram of the connection circuit board with EAGLE    |
 | Figure 7:  | Circuit board conductor side, assembly, combined (EAGLE)      |
 | Figure 8:  | Electrical connections                                        |

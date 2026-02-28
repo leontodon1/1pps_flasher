@@ -326,10 +326,10 @@ Das Paritätsbit wird also bei gerader Parität so berechnet, dass die Gesamtanz
 <p>Abbildung 2: Modus #86, Minute 35</p>
 
 <img src="media\image4.png" alt="" width="100%">
-<p>Abbildung 3: Mode #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE</p>
+<p>Abbildung 3: Modus #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE</p>
 
 <img src="media\image4.png" alt="" width="100%">
-<p>Abbildung 4: Mode #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE</p>
+<p>Abbildung 4: Modus #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE</p>
 
 Die Sequenzen \#82 bis \#85 haben diesen fehlenden Blitz an letzter Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter feststellen.
 
@@ -665,9 +665,9 @@ Datum: 2026/02
 | Abbildung | Beschreibung |
 |--------|------------|
 | Abbildung 1: | GPS pps Blitzer, fertiges Gerät |
-| Abbildung 2: | Modus \#86, Minute 35 |
-| Abbildung 3: | Mode #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE |
-| Abbildung 4: | Mode #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE |
+| Abbildung 2: | Modus #86, Minute 35 |
+| Abbildung 3: | Modus #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE |
+| Abbildung 4: | Modus #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE |
 | Abbildung 5: | Elektrischer Zusammenhang illustriert |
 | Abbildung 6: | Schaltplan der Verbindungsleiterplatte mit EAGLE |
 | Abbildung 7: | Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) |
