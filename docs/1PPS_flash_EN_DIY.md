@@ -329,10 +329,10 @@ The parity bit is therefore calculated for even parity so that the total number 
 <p>Figure 2: Mode #86, minute 35</p>
 
 <img src="media\image4b.png" alt="" width="100%">
-<p>Figure 3: Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE, C11</p>
+<p>Figure 3: Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE [2]</p>
 
 <img src="media\image4c.png" alt="" width="100%">
-<p>Figure 4: Mode #86, minute 23, weak flash, real measurement (C11) using PyOTE</p>
+<p>Figure 4: Mode #86, minute 23, weak flash, real measurement (C11) using PyOTE [2]</p>
 
 Sequences \#82 to \#85 have this missing flash at the end of the minute sequence. This makes it easier to determine the start of the minute.
 
@@ -649,6 +649,8 @@ It has been shown that a simple idea can be used to create a cost-effective meth
 
 \[1\] open-source code 1pps flasher\
 <https://github.com/leontodon1/1pps_flasher>
+Download zipped using Windows PowerShell:
+Invoke-WebRequest -Uri https://github.com/leontodon1/1pps_flasher/archive/refs/heads/main.zip -OutFile 1pps_flasher.zip
 
 \[2\] PyMovie, PyOTE\
 <https://occultations.org/documents/Windows-PyMovie-PyOTE-Anaconda3-installation%202020%20updated%2012-2020%20.pdf>\
@@ -680,7 +682,7 @@ Date: 2026/02
 |------------|---------------------------------------------------------------|
 | Figure 1:  | GPS pps speed camera, finished device                         |
 | Figure 2:  | Mode #86, minute 35                                          |
-| Figure 3:  | Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE, C11 |
+| Figure 3:  | Mode #86, minute 39, brightest flash, real measurement (C11) using PyOTE |
 | Figure 4:  | Mode #86, minute 23, weak flash, real measurement (C11) using PyOTE |
 | Figure 5:  | Electrical connection illustrated |
 | Figure 6:  | Circuit diagram of the connection circuit board with EAGLE    |

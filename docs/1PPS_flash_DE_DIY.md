@@ -40,7 +40,7 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 
 -	Diverse Modi voreingestellt am oberen Zahlenbereich, bis 100 Modi möglich
 
--	Schritt für Schritt Anleitung zum Selbstbau auf github.com [1]
+-	Schritt für Schritt Anleitung zum Selbstbau auf github.com \[1\]
 
 -	Öse zum Aufhängen mit richtiger Position der GPS Antenne
 
@@ -312,7 +312,7 @@ Die Sequenzen \#94 und \#99 ermöglichen GPS-synchronisierte Blitze in äquidist
 
 Die Sequenzen \#89 bis \#93 haben keinen Blitz bei GPS Sekunde 0 zur Einordnung der Blitze relativ zur Minute.
 
-Die Sequenzen \#88 und \#87 erlauben es mit Wissen über die Minute des Beginns oder Ende des Videos zuverlässige Zeitangaben mit PyMovie/PyOTE zu ermitteln und zu prüfen.
+Die Sequenzen \#88 und \#87 erlauben es mit Wissen über die Minute des Beginns oder Ende des Videos zuverlässige Zeitangaben mit PyMovie/PyOTE \[2\] zu ermitteln und zu prüfen.
 
 Die Sequenz \#86 ist gleich wie \#87 aber mit zusätzlich integrierter Kodierung der Minute mit Wiederholung und Paritätsbit an fixen Positionen, ähnlich der Methode beim DCF77 Signal. Damit ist es nicht mehr nötig die Minute zu notieren.
 
@@ -326,10 +326,10 @@ Das Paritätsbit wird also bei gerader Parität so berechnet, dass die Gesamtanz
 <p>Abbildung 2: Modus #86, Minute 35</p>
 
 <img src="media\image4.png" alt="" width="100%">
-<p>Abbildung 3: Modus #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE</p>
+<p>Abbildung 3: Modus #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE \[2\]</p>
 
 <img src="media\image4.png" alt="" width="100%">
-<p>Abbildung 4: Modus #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE</p>
+<p>Abbildung 4: Modus #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE\[2\]</p>
 
 Die Sequenzen \#82 bis \#85 haben diesen fehlenden Blitz an letzter Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter feststellen.
 
@@ -356,7 +356,7 @@ Mit Blitzen bei 00, 11, 23, 34 und 45 Sekunden mit ungleichen Zeitabständen nac
 
 **Video Auswertung:**
 
-Die Blitze sind derzeit 40 ms lang (25 fps), sodaß die mit dem Drehknopf eingestellte Helligkeit des Blitzes über alle Belichtungszeiten an einer Optik gleichbleibt. Die Blitze können so schwach eingestellt werden, daß sie fast nicht sichtbar sind, die Auswertung nicht beeinflussen aber dennoch sicher mit PyMovie (white aperture) und PyOTE erkannt werden können. Bei maximaler Leuchtstärke sieht man den Blitz sicher. Dies ist kaum abhängig von der Teleskopgröße!
+Die Blitze sind derzeit 40 ms lang (25 fps), sodaß die mit dem Drehknopf eingestellte Helligkeit des Blitzes über alle Belichtungszeiten an einer Optik gleichbleibt. Die Blitze können so schwach eingestellt werden, daß sie fast nicht sichtbar sind, die Auswertung nicht beeinflussen aber dennoch sicher mit PyMovie (white aperture) und PyOTE \[2\] erkannt werden können. Bei maximaler Leuchtstärke sieht man den Blitz sicher. Dies ist kaum abhängig von der Teleskopgröße!
 
 PyOTE: <img src="media/image5.png" alt="" width="40%">
 
@@ -375,7 +375,7 @@ Selbstbauanleitung - DIY
 Diese Leiterplatte dient hauptsächlich dazu die Verbindungen zwischen den Geräten mit Steckverbindungen zu realisieren. So können die gezeigten modularen Komponenten des nur teils gelöteten Geräts leicht ausgetauscht, getestet oder bei Defekt ersetzt werden. Wer sichere elektrische Verbindungen bevorzugt, kann mehr oder alles als Lötverbindung ausführen. Steckverbindungen mit Stiftleisten und Buchsenleisten sind aber ausreichend.
 
 <img src="media/image7.png" alt="" width="100%">
-<p>Abbildung 6: Schaltplan der Verbindungsleiterplatte mit EAGLE [3]</p>
+<p>Abbildung 6: Schaltplan der Verbindungsleiterplatte mit EAGLE \[3\]</p>
 
 Hinweis: Der Widerstand R7 muß in die Leitung gelötet werden, nicht auf die Platine bei Leiterplatte 1PPS_Teiler_v5_pro! Erst bei 1PPS_Teiler_v6_pro ist das design passend geändert, aber noch nicht verfügbar.
 
@@ -404,17 +404,17 @@ Tabelle 2: Teileliste
 <img src="media/image9.png" alt="" width="30%">
 <img src="media/image10.png" alt="" width="30%">
 </div>
-<p>Abbildung 7: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) [3]</p>
+<p>Abbildung 7: Leiterplatte Leiterseite, Bestückung, kombiniert (EAGLE) \[3\]</p>
 
 **Programmierung:**
 
-Im open-source Programmkode \[2\] sind Werte, welche beachtet werden sollen, mit „// SET: …“ kommentiert. Darüber hinaus wird auf Kommentare im Kode verwiesen.
+Im open-source Programmkode \[1\] sind Werte, welche beachtet werden sollen, mit „// SET: …“ kommentiert. Darüber hinaus wird auf Kommentare im Kode verwiesen.
 
-Zum Programmieren wurde die Arduino IDE \[3\] verwendet.
+Zum Programmieren wurde die Arduino IDE \[4\] verwendet.
 
 Es wurden folgende externe Bibliotheken im Kode eingebunden: \#include\
-\<AltSoftSerial.h\> \[4\], sehr stabile, serielle Schnittstelle für GPS (Timer-basiert)\
-\<TinyGPS++.h\> \[5\], parsen von NMEA-GPS-Daten (Zeit, Status)\
+\<AltSoftSerial.h\> \[5\], sehr stabile, serielle Schnittstelle für GPS (Timer-basiert)\
+\<TinyGPS++.h\> \[6\], parsen von NMEA-GPS-Daten (Zeit, Status)\
 AltSoftSerial ist pin-fest verdrahtet (Arduino Nano): RX = Pin D8\
 Nicht kompatibel mit Boards wie ESP32, ESP8266 oder Leonardo ohne Anpassung.
 
@@ -632,12 +632,14 @@ Tabelle 4: Leitungen
 
 **Zusammenfassung:**
 
-Es wurde gezeigt, daß mit einer einfachen Idee eine kostengünstige Methode für exakte Zeitstempel in astronomischen Videos im Bereich unter einer Millisekunde für jegliche Optik möglich ist. Der Weg zum eigenen Gerät im Zuge des Selbstbaus wurde detailliert gezeigt. Der Quellcode wird zur Verfügung gestellt \[2\]. Der Autor unterstützt bei Problemen mit der Teilebeschaffung (Lieferanten) und hat mehrere Geräte zur eigenen Nutzung, die zum Test leihweise abgegeben werden.
+Es wurde gezeigt, daß mit einer einfachen Idee eine kostengünstige Methode für exakte Zeitstempel in astronomischen Videos im Bereich unter einer Millisekunde für jegliche Optik möglich ist. Der Weg zum eigenen Gerät im Zuge des Selbstbaus wurde detailliert gezeigt \[1\]. Der Quellcode wird zur Verfügung gestellt \[1\]. Der Autor unterstützt bei Problemen mit der Teilebeschaffung (Lieferanten) und hat mehrere Geräte zur eigenen Nutzung, die zum Test leihweise abgegeben werden.
 
 **Quellen:**
 
 \[1\] open-source code 1pps flasher\
 <https://github.com/leontodon1/1pps_flasher>
+Download gezippt mit Windows PowerShell:
+Invoke-WebRequest -Uri https://github.com/leontodon1/1pps_flasher/archive/refs/heads/main.zip -OutFile 1pps_flasher.zip
 
 \[2\] PyMovie, PyOTE\
 <https://occultations.org/documents/Windows-PyMovie-PyOTE-Anaconda3-installation%202020%20updated%2012-2020%20.pdf>\

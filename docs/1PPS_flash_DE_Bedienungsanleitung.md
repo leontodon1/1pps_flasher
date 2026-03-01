@@ -40,7 +40,7 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 
 -	Diverse Modi voreingestellt am oberen Zahlenbereich, bis 100 Modi möglich
 
--	Schritt für Schritt Anleitung zum Selbstbau auf github.com [1]
+-	Schritt für Schritt Anleitung zum Selbstbau auf github.com \[1\]
 
 -	Öse zum Aufhängen mit richtiger Position der GPS Antenne
 
@@ -83,7 +83,7 @@ Der Code ist derart optimiert, daß die Blitze weniger als 100 µs nach dem pps 
 
 Der Blitz hat außer bei \#00 immer dieselbe Dauer von 40ms.
 
-Im Modus \#00 leuchtet die LED lang. So kann die Helligkeit mit dem Schaltpotentiometer eingestellt werden. Am besten sieht man gerade noch ein schwaches Aufleuchten im Video. PyOTE kann sogar Markierungen auswerten, wenn man das Blitzen nicht mehr sieht.
+Im Modus \#00 leuchtet die LED lang. So kann die Helligkeit mit dem Schaltpotentiometer eingestellt werden. Am besten sieht man gerade noch ein schwaches Aufleuchten im Video. PyOTE \[2\] kann sogar Markierungen auswerten, wenn man das Blitzen nicht mehr sieht.
 
 Die speziellen Funktionen (#82-#99) verwenden dagegen NMEA-Daten, auch für die Sekunde, während die zeitliche Triggerung über das deutlich genauere pps-Signal verwendet wird.\
 Erst mit gültigen NMEA-Daten arbeiten die Sonderfunktionen wie erwartet und die obere obere Status-LED am Arduino NANO verlischt! Bei ungültigen oder keinen NMEA-Daten blinkt die obere Status-LED langsam (wechselt jede Sekunde).
@@ -312,7 +312,7 @@ Die Sequenzen \#94 und \#99 ermöglichen GPS-synchronisierte Blitze in äquidist
 
 Die Sequenzen \#89 bis \#93 haben keinen Blitz bei GPS Sekunde 0 zur Einordnung der Blitze relativ zur Minute.
 
-Die Sequenzen \#88 und \#87 erlauben es mit Wissen über die Minute des Beginns oder Ende des Videos zuverlässige Zeitangaben mit PyMovie/PyOTE zu ermitteln und zu prüfen.
+Die Sequenzen \#88 und \#87 erlauben es mit Wissen über die Minute des Beginns oder Ende des Videos zuverlässige Zeitangaben mit PyMovie/PyOTE \[2\] zu ermitteln und zu prüfen.
 
 Die Sequenz \#86 ist gleich wie \#87 aber mit zusätzlich integrierter Kodierung der Minute mit Wiederholung und Paritätsbit an fixen Positionen, ähnlich der Methode beim DCF77 Signal. Damit ist es nicht mehr nötig die Minute zu notieren.
 
@@ -326,10 +326,10 @@ Das Paritätsbit wird also bei gerader Parität so berechnet, dass die Gesamtanz
 <p>Abbildung 2: Modus #86, Minute 35</p>
 
 <img src="media\image4.png" alt="" width="100%">
-<p>Abbildung 3: Modus #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE</p>
+<p>Abbildung 3: Modus #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE \[2\]</p>
 
 <img src="media\image4.png" alt="" width="100%">
-<p>Abbildung 4: Modus #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE</p>
+<p>Abbildung 4: Modus #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE \[2\]</p>
 
 Die Sequenzen \#82 bis \#85 haben diesen fehlenden Blitz an letzter Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter feststellen.
 
@@ -356,7 +356,7 @@ Mit Blitzen bei 00, 11, 23, 34 und 45 Sekunden mit ungleichen Zeitabständen nac
 
 **Video Auswertung:**
 
-Die Blitze sind derzeit 40 ms lang (25 fps), sodaß die mit dem Drehknopf eingestellte Helligkeit des Blitzes über alle Belichtungszeiten an einer Optik gleichbleibt. Die Blitze können so schwach eingestellt werden, daß sie fast nicht sichtbar sind, die Auswertung nicht beeinflussen aber dennoch sicher mit PyMovie (white aperture) und PyOTE erkannt werden können. Bei maximaler Leuchtstärke sieht man den Blitz sicher. Dies ist kaum abhängig von der Teleskopgröße!
+Die Blitze sind derzeit 40 ms lang (25 fps), sodaß die mit dem Drehknopf eingestellte Helligkeit des Blitzes über alle Belichtungszeiten an einer Optik gleichbleibt. Die Blitze können so schwach eingestellt werden, daß sie fast nicht sichtbar sind, die Auswertung nicht beeinflussen aber dennoch sicher mit PyMovie (white aperture) und PyOTE \[2\] erkannt werden können. Bei maximaler Leuchtstärke sieht man den Blitz sicher. Dies ist kaum abhängig von der Teleskopgröße!
 
 PyOTE: <img src="media/image5.png" alt="" width="40%">
 
@@ -367,14 +367,18 @@ PyOTE: <img src="media/image5.png" alt="" width="40%">
 
 **Zusammenfassung:**
 
-Es wurde gezeigt, daß mit einer einfachen Idee eine kostengünstige Methode für exakte Zeitstempel in astronomischen Videos im Bereich unter einer Millisekunde für jegliche Optik möglich ist. Der Weg zum eigenen Gerät im Zuge des Selbstbaus wurde detailliert gezeigt. Der Quellcode wird zur Verfügung gestellt \[2\]. Der Autor unterstützt bei Problemen mit der Teilebeschaffung (Lieferanten) und hat mehrere Geräte zur eigenen Nutzung, die zum Test leihweise abgegeben werden.
+Es wurde gezeigt, daß mit einer einfachen Idee eine kostengünstige Methode für exakte Zeitstempel in astronomischen Videos im Bereich unter einer Millisekunde für jegliche Optik möglich ist. Der Weg zum eigenen Gerät im Zuge des Selbstbaus wurde detailliert gezeigt \[1\]. Der Quellcode wird zur Verfügung gestellt \[1\]. Der Autor unterstützt bei Problemen mit der Teilebeschaffung (Lieferanten) und hat mehrere Geräte zur eigenen Nutzung, die zum Test leihweise abgegeben werden.
 
 **Quellen:**
 
-\[1\] EAGLE, <https://en.eagle.cool/download>
-
-\[2\] open-source code 1pps flasher\
+\[1\] open-source code 1pps flasher\
 <https://github.com/leontodon1/1pps_flasher>
+Download gezippt mit Windows PowerShell:
+Invoke-WebRequest -Uri https://github.com/leontodon1/1pps_flasher/archive/refs/heads/main.zip -OutFile 1pps_flasher.zip
+
+\[2\] PyMovie, PyOTE\
+<https://occultations.org/documents/Windows-PyMovie-PyOTE-Anaconda3-installation%202020%20updated%2012-2020%20.pdf>\
+<https://pypi.org/project/pymovie/>
 
 **Version:**
 
