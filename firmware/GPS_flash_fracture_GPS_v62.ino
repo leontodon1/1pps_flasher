@@ -31,8 +31,8 @@
 const byte piezoPin1 = A3;
 const byte piezoPin2 = A4;
 volatile bool state = false;
-bool buzzerEnabled = true;  // enable buzzer here
-bool PiezoFreq = false;     // piezo buzzers with frequenvy
+bool buzzerEnable = false;  // buzzer enabled
+bool PiezoFreq = false;     // state of piezo buzzers with frequenvy
 unsigned long piezoNow;
 unsigned long lastToggle = 0;
 unsigned long toggleInterval = 10;  // is set inside function depending on needs
@@ -76,9 +76,10 @@ static unsigned long lastBlink = 0;
 // voltage survaillance
 #define LED_PIN 13                // internal LED, pin D13
 const bool LCLowBatEna = 1;       // SET: enable low battery check
-float frequency = 4;              // SET: blink frequency if internal LED at low battery (Hz)
-float voltage;                    // battery voltage (V)
-float UBatLow = 3.1;              // 3.1V: low battery indicator at 15% SOC
+float TLowBatHalf = 100;          // SET: blink toggle time  if internal LED at low battery
+float voltage = 4;                // battery voltage (V)
+float voltageRaw;                 // battery voltage (V)
+float UBatLow = 3.15;             // 3.1V: low battery indicator at 15% SOC
 float UBatCut = 2.8;              // 2.8V: final battery cutoff, signal system cutoff at <5% SOC
 float halfPeriod;                 // calculate half period for internal LED blinking
 const float refVoltage = 5.0;     // reference voltage (standard: 5.0V at UNO/Nano, sometimes 3.3V)
@@ -96,7 +97,7 @@ bool LCblinkIntLED;               // blink internal LED
 // timing variables
 const unsigned long ONdurLight = 800;       // SET: default long flash duration for illumination control
 const unsigned long ONdurNorm = 40;         // SET: default short flash duration for time measurement
-float TNMEAhalf = 1000;                     // T for change internal LED state for no NMEA data
+float TNMEAhalf = 1000;                     // T (ms) for change internal LED state for no NMEA data
 unsigned long ONduration;                   // flash duration
 bool LCsecValid = 0;                        // GPS second is valid
 uint8_t Sekunde;                            // second received from GPS
@@ -284,9 +285,9 @@ void loop() {
   SELspecFun();         // select special function for BCD and HEX code wheels
 
   // carry out battery checks, serve low battery indicator
-  PiezoBuzzer();
   BattCheck();        // battery check with and w/o valid GPS
   LowBatIndicator();  // low bat indicator: internal LED is blinking with high frequency, battery cutoff flag
+  PiezoBuzzer();
   // ShowLUTs();         // for testing!!, 0: for production
   UpdateGpsAlive();  // GPS alive checks, flash LED slow
 }  // end void loop
@@ -332,6 +333,17 @@ void PPStrigger() {
     Serial.print(" ");
     Serial.print(1000000 / loopsPsec);  // loop µs
     Serial.println(" µs ");
+    Serial.print("toggleInt");
+    Serial.print(toggleInterval);
+    Serial.print(" lowBat ");
+    Serial.print(LClowBatActive);
+    Serial.print(" secValid ");
+    Serial.print(LCsecValid);
+    Serial.print(" gpsTimeValid ");
+    Serial.print(LCgpsTimeValid);
+    Serial.print(" voltage ");
+    Serial.print(voltage);
+    Serial.println(voltageRaw);
     loopsPsec = 0;
     TpulseStart = millis();  // start time for LED pulse duration
     LCPPSfall = 1;           // only for 1 loop
@@ -429,21 +441,6 @@ void PPStrigger() {
   }    // end LCppsSig
 }  // end void PPStrigger
 
-void PiezoBuzzer() {
-  piezoNow = millis();
-  // PiezoFreq toggle
-  if (piezoNow - lastToggle >= toggleInterval) {
-    PiezoFreq = !PiezoFreq;  // switch flag
-    lastToggle = piezoNow;
-  }
-  if (buzzerEnabled && PiezoFreq) {
-    TIMSK2 |= (1 << OCIE2A);  // sound ON
-  } else {
-    TIMSK2 &= ~(1 << OCIE2A);  // sound OFF
-    digitalWrite(piezoPin1, LOW);
-    digitalWrite(piezoPin2, LOW);
-  }
-}  // void PiezoBuzzer
 
 void GPStimeDebug(bool LCLocTimeon, bool LCSekon) {  // output: Fix: YES | time valid: JA | time updated: NO | hh:mm:ss = 16:9:23
   if (1 && !DEBUG_NMEA && LCLocTimeon && LCserialPrintON && (LCPPSfall)) {
@@ -587,8 +584,9 @@ void BattCheck() {
   }
   if (LCTrigBatCheck) {  // check battery voltage
     LCTrigBatCheck = 0;
-    UBatdigVal = analogRead(UBatanaIn);            // Value between 0 and 1023
-    voltage = UBatdigVal * (refVoltage / 1023.0);  // conversion to battery voltage
+    UBatdigVal = analogRead(UBatanaIn);               // Value between 0 and 1023
+    voltageRaw = UBatdigVal * (refVoltage / 1023.0);  // conversion to battery voltage
+    voltage = min(voltage, voltageRaw);
     // info: 2,50V 0% # 3,0V 10% # 3,2V 20% # 3,22V 30% # 3,25V 40% # 3,26V 50% # 3,27V 60% # 3,3V 70% # 3,32V 80% # 3,35V 90% # 3,4V 100% ## 3,65V 100% charging
     LClowBatActive = LCLowBatEna && voltage < UBatLow;  // low battery indicator at 15% SOC
     // battery connection cutoff
@@ -599,10 +597,9 @@ void BattCheck() {
   }  // end LCTrigBatCheck
 }  // end void BatCheck
 
-
-void LowBatIndicator() {                      // battery indication
-  if (LClowBatActive) {                       // low bat indicator: internal LED is blinking with high frequency
-    halfPeriod = 1000.0 / (2.0 * frequency);  // half period for internal LED blinking
+void LowBatIndicator() {       // battery indication
+  if (LClowBatActive) {        // low bat indicator: internal LED is blinking with high frequency
+    halfPeriod = TLowBatHalf;  // half period for internal LED blinking
     LCblinkIntLED = 1;
   } else if (!LCsecValid || !LCgpsTimeValid) {
     halfPeriod = TNMEAhalf;  //  half period for NMEA data invalid
@@ -612,9 +609,7 @@ void LowBatIndicator() {                      // battery indication
     LCledState = 0;
     digitalWrite(LED_PIN, LOW);  // write internal LED LOW
   }
-  toggleInterval = LCgpsTimeValid ? 200 : 500;
   if (LCblinkIntLED) {  // low bat indicator: internal LED is blinking with high frequency
-    buzzerEnabled = true;
     TcurBat = millis();
     if (TcurBat - TprevBat >= halfPeriod) {  // internal LED blinking fast
       TprevBat = TcurBat;                    // time update
@@ -622,11 +617,33 @@ void LowBatIndicator() {                      // battery indication
       digitalWrite(LED_PIN, LCledState);     // write internal LED
     }                                        // end halfPeriod
   }                                          // end LCblinkIntLED
-  else {
-    buzzerEnabled = false;
-    toggleInterval = 200;
-  }
 }  // end void LowBatIndicator
+
+void PiezoBuzzer() {
+  // toggleInterval = LCgpsTimeValid ? 200 : 500;
+  if (!LCsecValid || !LCgpsTimeValid) {
+    toggleInterval = 500;
+    buzzerEnable = true;
+  } else if (LCsecValid && LClowBatActive) {
+    toggleInterval = 200;
+    buzzerEnable = true;
+  } else {
+    buzzerEnable = false;
+  }
+  piezoNow = millis();
+  // PiezoFreq toggle
+  if (piezoNow - lastToggle >= toggleInterval) {
+    PiezoFreq = !PiezoFreq;  // switch flag
+    lastToggle = piezoNow;
+  }
+  if (buzzerEnable && PiezoFreq) {
+    TIMSK2 |= (1 << OCIE2A);  // sound ON
+  } else {
+    TIMSK2 &= ~(1 << OCIE2A);  // sound OFF
+    digitalWrite(piezoPin1, LOW);
+    digitalWrite(piezoPin2, LOW);
+  }
+}  // void PiezoBuzzer
 
 void UpdateGpsAlive() {  // let internal LED blink slowly if NMEA data is not updated
   LCalive = (millis() - TGPSRx) < timeoutMs;
@@ -653,7 +670,6 @@ void processNMEALine(String line) {
       char statusChar = line.charAt(lastIndex);
       LCgpsTimeValid = (statusChar == 'A');  // A = Sekunde gültig, !! used for internal LED
       TRMC = millis();                       //update time of GNRMC
-      buzzerEnabled = !LCgpsTimeValid;
     }
   }
 }  // end void processNMEALine
