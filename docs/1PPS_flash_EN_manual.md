@@ -375,8 +375,8 @@ It has been shown that a simple idea can be used to create a cost-effective meth
 **Sources:**
 
 \[1\] open-source code 1pps-flasher\
-<https://github.com/leontodon1/1pps_flasher>
-Download zipped using Windows PowerShell:
+<https://github.com/leontodon1/1pps_flasher>\
+Download zipped using Windows PowerShell:\
 Invoke-WebRequest -Uri https://github.com/leontodon1/1pps_flasher/archive/refs/heads/main.zip -OutFile 1pps_flasher.zip
 
 \[2\] PyMovie, PyOTE\
