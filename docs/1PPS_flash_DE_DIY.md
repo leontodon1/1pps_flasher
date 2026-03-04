@@ -327,10 +327,10 @@ Das Paritätsbit wird also bei gerader Parität so berechnet, dass die Gesamtanz
 <img src="media\image4.png" alt="" width="100%">
 <p>Abbildung 2: Modus #86, Minute 35</p>
 
-<img src="media\image4.png" alt="" width="100%">
+<img src="media\image4b.png" alt="" width="100%">
 <p>Abbildung 3: Modus #86, Minute 39, hellster Blitz, reale Messung (C11) mit PyOTE \[2\]</p>
 
-<img src="media\image4.png" alt="" width="100%">
+<img src="media\image4c.png" alt="" width="100%">
 <p>Abbildung 4: Modus #86, Minute 23, kaum sichtbarer Blitz, reale Messung (C11) mit PyOTE\[2\]</p>
 
 Die Sequenzen \#82 bis \#85 haben diesen fehlenden Blitz an letzter Stelle in der Minutensequenz. Damit läßt sich der Minutenbeginn leichter feststellen.
