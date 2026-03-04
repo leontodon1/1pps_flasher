@@ -60,6 +60,8 @@ This publication is intended to help you build the device yourself.
 
 - Last 0.5 to 1 hour: ‘low batt.’ indicator flashes rapidly
 
+-	Piezo buzzer acoustically indicates missing NMEA data or ‘low batt.’
+
 - Deep discharge protection: device switches off, residual current 2mA, all LEDs off
 
 - 2 hours charging via USB-C, integrated charger.\
@@ -78,7 +80,7 @@ A flashing LED is attached to a clamp. This is connected to the control unit by 
 
 The clamp is attached to the dew cap of the optics with the LED facing inwards in the beam path. If the distance to the edge of the beam path is large, the clamp width can be modified by extending the black cylinder.
 
-The code is optimised so that the flashes appear less than 100 µs after the pps signal (peak per second) from the GPS. The loop time is less than 0.25 ms. The light signal is therefore delayed by significantly less than 1 ms. Our own measurements using a DVTI yielded a maximum of 2 ms. However, this has not yet been reliably verified and still needs to be confirmed using EXTA!
+The code is optimised so that the flashes appear less than 100 µs after the pps signal (peak per second) from the GPS. The loop time is less than 0.3 ms. The light signal is therefore delayed by significantly less than 1 ms. Our own measurements using a DVTI yielded a maximum of 2 ms. However, this has not yet been reliably verified and still needs to be confirmed using EXTA!
 
 Except for \#00, the flash always has the same duration of 40 ms.
 
@@ -86,9 +88,9 @@ In mode \#00, the LED lights up for a long time. This allows the brightness to b
 
 The special functions (#82-#99), on the other hand, use NMEA data, including for the second, while the time trigger is based on the significantly more accurate pps signal.
 
-Only with valid NMEA data will the special functions work as expected and the upper status LED on the Arduino NANO go out! If the NMEA data is invalid or missing, the upper status LED will flash slowly (changing every second).
+Only with valid NMEA data do the special functions work as expected, and the upper status LED on the Arduino NANO goes out and the piezo buzzer stops! If the NMEA data is invalid or missing, the upper status LED flashes slowly (changing every second) and the piezo buzzer also beeps every second.  
 
-When the battery is fully charged, the device will flash for approx. 7 hours, with the status LED flashing rapidly for the last half hour to hour. The deep discharge protection then puts the device into sleep mode with a residual current of 2 mA. However, the device must still be switched off completely with the switch to protect the battery! The battery has a capacity of 600 mAh with a maximum consumption of 80 mA. The battery is charged via the USB-C port. A charger is integrated for this purpose. The control unit can be charged via the USB port when switched off or during operation. However, it is better not to charge during operation to protect the GPS module, which is then connected to the battery at increased voltage. The charging time is approximately two hours.
+When the battery is fully charged, the device will flash for approx. 6 hours, with the status LED flashing rapidly for the last half hour to hour. The deep discharge protection then puts the device into sleep mode with a residual current of 2 mA. However, the device must still be switched off completely with the switch to protect the battery! The battery has a capacity of 600 mAh with a maximum consumption of 80 mA. The battery is charged via the USB-C port. A charger is integrated for this purpose. The control unit can be charged via the USB port when switched off or during operation. However, it is better not to charge during operation to protect the GPS module, which is then connected to the battery at increased voltage. The charging time is approximately two hours.
 
 Deep discharge protection is implemented. At low voltage (3.1 V), the upper status LED flashes rapidly (4 hertz). At the end-of-discharge voltage (2.8 V), the device switches to sleep mode. When deep discharge protection is activated, all LEDs go out. However, a residual current still flows, causing the battery to be deeply discharged after another 2 days. <u>Therefore, the device must always be switched off using the switch, as a single deep discharge can destroy the LiFePo4 battery.</u>\
 The device can be reactivated by switching it off using the rotary knob and then switching it back on again. If it switches off again immediately, wait a few seconds before switching it on again.
@@ -102,15 +104,15 @@ Clip the bracket onto the dew cap with the LED pointing into the optical path.
 Switch on by turning the knob to the right.
 
 Initially, the 1pps LED is permanently lit and the status LED flashes every second because no pps signal and no NMEA data have been detected yet. When the status LED is off and the 1pps signal briefly goes out very short every second, the device is ready for operation.\
-This will happen within a minute in the open air, but sometimes it takes several minutes.
+This will happen within a minute in the open air, but sometimes it takes several minutes if GPS reception is poor.
 
-If the status LED flashes slowly, no valid NMEA data is available yet. This means that the special functions from \#99 down to \#82 cannot be used. However, the exact 1pps signal can be used with functions \#01 to \#81 if the 1pps LED on the device is already flashing. If the upper status LED flashes quickly, this means that the battery will soon be empty and the device will then switch to sleep mode.
+If the status LED flashes and the piezo buzzer beeps slowly, no valid NMEA data is available yet. This means that the special functions from #99 down to #82 cannot be used. However, the exact 1pps signal can be used with functions #01 to #81 if the 1pps LED is already flashing. If the status LED flashes rapidly and the piezo buzzer beeps rapidly, this means that the battery will soon be empty and the device will then switch to sleep mode. While the status LED primarily indicates a low battery charge level, the piezo buzzer primarily beeps slowly when no valid NMEA data is available. 
 
 The exact electrical pps signal from the GPS module is used for the LED on the clip.
 
-First set the coding wheels to \#00 and adjust the required brightness on the potentiometer.
+First set the encoding wheels to \#00 and adjust the required brightness on the potentiometer.
 
-Then set the desired mode. You can switch to any other mode at any time using the two coding wheels. After one second, the signal will be correct.
+Then set the desired mode. You can switch to any other mode at any time using the two encoding wheels. After one second, the signal will be correct.
 
 The device can now be used to set millisecond-accurate timestamps visually.
 
@@ -122,7 +124,7 @@ A red LED flashes briefly at the tip of the clamp every second, synchronized wit
 
 To clarify: An internal counter counts up from zero after a flash until it reaches the set number. If you set this number higher after a flash at a specific second, you have set the sequence to the beginning.
 
-Until the set number is exceeded by the counter, you can continue to adjust the coding wheels. With a little skill and thought, such as setting the tens first, there is enough time to complete the settings.
+Until the set number is exceeded by the counter, you can continue to adjust the encoding wheels. With a little skill and thought, such as setting the tens first, there is enough time to complete the settings.
 
 This gives you a lot of freedom, but this type of setting requires skill and you still need an accurate time (Android: e.g., AtomUhr app). If you start and stop the video with a robot app (e.g., MacroDroid) when using a “smart telescope” with a cell phone, the start and end of the video are accurate to the second, which makes it much easier to determine the minute.
 

@@ -61,6 +61,8 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 
 -	Letzte 0,5 … 1 Stunde „low batt.“ Anzeige durch schnell blinkende Status-LED 
 
+-	Piezo Summer zeigt akustisch fehlende NMEA-Daten, bzw. „low batt.“ an 
+
 -	Tiefentladeschutz: Gerät schaltet ab, Reststrom 2mA, alle LED aus
 
 -	2h Laden über USB-C, Ladegerät integriert. \
@@ -79,16 +81,16 @@ Eine blitzende LED ist an einer Klammer angebracht. Diese ist mit einer Leitung 
 
 Die Klammer wird an die Taukappe der Optik mit LED nach innen in den Strahlengang angeklemmt. Bei großem Abstand zum Rand des Strahlengangs kann die Klammerweite modifiziert werden indem der schwarze Zylinder verlängert wird.
 
-Der Code ist derart optimiert, daß die Blitze weniger als 100 µs nach dem pps Signal (peak per second) des GPS erscheinen. Die loop-Zeit beträgt unter 0,25 ms. Das Lichtsignal ist demnach deutlich weniger als 1 ms verzögert. Eigene Messungen mithilfe einer DVTI ergaben maximal 2ms. <span class="mark">Dies ist aber derzeit noch nicht zuverlässig nachgemessen worden und muß noch mittels EXTA festgestellt werden!</span>
+Der Code ist derart optimiert, daß die Blitze weniger als 100 µs nach dem pps Signal (peak per second) des GPS erscheinen. Die loop-Zeit beträgt unter 0,3 ms. Das Lichtsignal ist demnach deutlich weniger als 1 ms verzögert. Eigene Messungen mithilfe einer DVTI ergaben maximal 2ms. <span class="mark">Dies ist aber derzeit noch nicht zuverlässig nachgemessen worden und muß noch mittels EXTA festgestellt werden!</span>
 
 Der Blitz hat außer bei \#00 immer dieselbe Dauer von 40ms.
 
 Im Modus \#00 leuchtet die LED lang. So kann die Helligkeit mit dem Schaltpotentiometer eingestellt werden. Am besten sieht man gerade noch ein schwaches Aufleuchten im Video. PyOTE kann sogar Markierungen auswerten, wenn man das Blitzen nicht mehr sieht.
 
 Die speziellen Funktionen (#82-#99) verwenden dagegen NMEA-Daten, auch für die Sekunde, während die zeitliche Triggerung über das deutlich genauere pps-Signal verwendet wird.\
-Erst mit gültigen NMEA-Daten arbeiten die Sonderfunktionen wie erwartet und die obere obere Status-LED am Arduino NANO verlischt! Bei ungültigen oder keinen NMEA-Daten blinkt die obere Status-LED langsam (wechselt jede Sekunde).
+Erst mit gültigen NMEA-Daten arbeiten die Sonderfunktionen wie erwartet und die obere obere Status-LED am Arduino NANO verlischt und der Piezo-Summer geht aus! Bei ungültigen oder keinen NMEA-Daten blinkt die obere Status-LED langsam (wechselt jede Sekunde) und der Piezo-Summer piepst ebenfalls im Sekundenrhythmus. 
 
-Bei vollem Akku wird das Gerät ca. 7 Stunden blitzen wobei die letzte halbe bis eine Stunde die Status-LED schnell blinkt. Dann versetzt der Tiefentladeschutz das Gerät in den Ruhemodus mit 2 mA Reststrom. Das Gerät muß zum Schutz des Akkus dennoch mit dem Schalter vollständig abgeschaltet werden! Der Akku hat 600 mAh Kapazität bei max. 80 mA Verbrauch. Der Akku wird über den USB-C Anschluß geladen. Ein Ladegerät ist dazu integriert. Das Steuergerät kann im ausgeschalten Zustand oder auch während des Betriebs über die USB-Buchse geladen werden. Dennoch ist es besser während des Betriebs nicht zu laden zum Schutz des GPS-Moduls, welches dann mit dem Akku verbunden ist bei erhöhter Spannung. Die Ladezeit beträgt ca. zwei Stunden.
+Bei vollem Akku wird das Gerät ca. 6 Stunden blitzen wobei die letzte halbe bis eine Stunde die Status-LED schnell blinkt. Dann versetzt der Tiefentladeschutz das Gerät in den Ruhemodus mit 2 mA Reststrom. Das Gerät muß zum Schutz des Akkus dennoch mit dem Schalter vollständig abgeschaltet werden! Der Akku hat 600 mAh Kapazität bei max. 80 mA Verbrauch. Der Akku wird über den USB-C Anschluß geladen. Ein Ladegerät ist dazu integriert. Das Steuergerät kann im ausgeschalten Zustand oder auch während des Betriebs über die USB-Buchse geladen werden. Dennoch ist es besser während des Betriebs nicht zu laden zum Schutz des GPS-Moduls, welches dann mit dem Akku verbunden ist bei erhöhter Spannung. Die Ladezeit beträgt ca. zwei Stunden.
 
 Ein Tiefentladeschutz ist implementiert. Bei geringer Spannung (3,1 V) blinkt die obere Status-LED in schneller Folge (4 Hertz). Bei Entladeschlußspannung (2,8 V) schaltet sich das Gerät in den Ruhemodus. Ist der Tiefentladeschutz aktiviert, gehen alle LED aus. Es fließt aber noch ein Reststrom wodurch der Akku nach weiteren 2 Tagen tiefentladen wird. <u>Daher muß das Gerät immer per Schalter ausgeschaltet werden, denn eine einzige Tiefentladung kann den LiFePo4 Akku zerstören.</u>\
 Das Gerät kann reaktiviert werden, indem man es am Drehknopf ausschaltet, und wieder anschaltet. Geht es sofort wieder aus mit dem Anschalten ein paar Sekunden warten.
@@ -102,9 +104,9 @@ Die Klammer an der Taukappe anklemmen mit der LED im Strahlengang in die Optik z
 Mit Drehknopf nach rechts einschalten.
 
 Zunächst ist die 1pps-LED dauerhaft an und die Status-LED blinkt im Sekundenrhythmus, weil noch kein pps-Signal und keine NMEA Daten erkannt wurden. Wenn die Status-LED aus ist und das 1pps-Signal im Sekundenrhythmus kurz aus geht, ist das Gerät betriebsbereit.\
-Dies wird unter freiem Himmel binnen einer Minute geschehen, manchmal dauert es mehrere Minuten.
+Dies wird unter freiem Himmel binnen einer Minute geschehen, manchmal dauert es mehrere Minuten wenn der GPS Empfang schlecht ist. 
 
-Blinkt die Status-LED langsam, liegen noch keine gültigen NMEA Daten vor. Damit können die speziellen Funktionen von \#99 abwärts bis \#82 nicht verwendet werden. Allerdings kann das exakte 1pps-Signal mit den Funktionen \#01 bis \#81 verwendet werden, wenn schon die 1pps-LED blinkt. Blinkt die Status-LED schnell, bedeutet dies, daß der Akku bald leer sein wird und das Gerät dann in den Ruhemodus ausschaltet.
+Blinkt die Status-LED und piepst der Piezo-Summer langsam, liegen noch keine gültigen NMEA Daten vor. Damit können die speziellen Funktionen von #99 abwärts bis #82 nicht verwendet werden. Allerdings kann das exakte 1pps-Signal mit den Funktionen #01 bis #81 verwendet werden, wenn schon die 1pps-LED blinkt. Blinkt die Status-LED schnell und piepst der Piezo-Summer schnell, bedeutet dies, daß der Akku bald leer sein wird und das Gerät dann in den Ruhemodus ausschaltet. Während bei der Status-LED ein geringer Ladezustand des Akkus primär angezeigt wird, piepst der Piezo-Summer primär langsam wenn keine gültigen NMEA-Daten vorliegen. 
 
 Für die LED an der Klammer wird das exakte elektrische pps-Signal des GPS-Moduls verwendet.
 
@@ -482,7 +484,7 @@ Die vier äußeren, überstehenden Stifte an der Gehäuseseite vorsichtig bündi
 
 Stiftleisten auf der dem Reset-Taster und LEDs <u>gegenüber</u> liegenden Seite löten! Nur die benötigten Stifte einlöten: 6 Ports von GND bis A5 und 12 Ports von GND bis D12. Besondere Aufmerksamkeit sollte man dabei auf die richtige Position der Pin-Leisten verwenden!! Ein Steckbrett erleichtert das Löten senkrechter Stiftleisten erheblich.\
 Die LED „POW“ sowie „TX“ mit undurchsichtigem Material abdecken (Isolierband, Schrumpfschlauch, „flüssiges Gummi“). Ihr Licht stört die Anzeige der LED „L“ welche später eine schwache Batterie oder ungültige NMEA-Daten anzeigt.\
-Die Pins RST und A6 bleiben später frei.
+Die Pins RST und A6 bleiben später frei. In den Bildern sind die Pins A3 und A4 für den Piezo-Summer noch nicht zu sehen, sollten aber auch gelötet werden. 
 
 <img src="media/image17.jpeg" alt="" width="100%">
 <p>Abbildung 14: Stift- und Buchsenleisten am Arduino NANO und dem GPS-Modul</p>
