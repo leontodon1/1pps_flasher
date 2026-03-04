@@ -57,7 +57,7 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 
 -	3,2 V LiFePo4 Akku mit 600 mAh, Verbrauch: typisch 80 mA
 
--	Betriebsdauer ca. 7 Stunden
+-	Betriebsdauer ca. 6 Stunden
 
 -	Letzte 0,5 … 1 Stunde „low batt.“ Anzeige durch schnell blinkende Status-LED 
 

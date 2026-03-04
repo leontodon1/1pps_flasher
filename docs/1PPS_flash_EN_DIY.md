@@ -56,7 +56,7 @@ This publication is intended to help you build the device yourself.
 
 - 3.2 V LiFePo4 battery with 600 mAh, consumption: typically 80 mA
 
-- Operating time approx. 7 hours
+- Operating time approx. 6 hours
 
 - Last 0.5 to 1 hour: ‘low batt.’ indicator flashes rapidly
 
