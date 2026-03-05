@@ -21,7 +21,7 @@ This publication is intended to help you build the device yourself.
 
 **Functional features at a glance:**
 
-- Optical timestamps in astronomical videos
+-	Optical time stamps in videos (night sky or dark areas necessary)
 
 - Initial solution if the camera system does not provide time stamps 
 
@@ -645,7 +645,7 @@ Table 4: Cables
 
 **Summary:**
 
-It has been shown that a simple idea can be used to create a cost-effective method for accurate time stamps in astronomical videos in the range of less than a millisecond for any optics. The process of building your own device has been shown in detail \[1\]. The source code is available \[1\]. The author provides support in case of problems with parts procurement (suppliers) and has several devices for his own use, which can be borrowed for testing.
+It has been shown that a simple idea can be used to create a cost-effective method for accurate time stamps in astronomical videos with very dark areas in the picture in the range of less than a millisecond for any optics. The process of building your own device has been shown in detail \[1\]. The source code is available \[1\]. The author provides support in case of problems with parts procurement (suppliers) and has several devices for his own use, which can be borrowed for testing.
 
 **Sources:**
 

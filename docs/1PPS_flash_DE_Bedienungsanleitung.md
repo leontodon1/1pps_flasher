@@ -21,7 +21,7 @@ Diese Veröffentlichung soll dazu beitragen den Nachbau selbständig durchzufüh
 
 **Funktionale Eigenschaften im Überblick:**
 
--	Optische Zeitmarken in astronomischen Videos 
+-	Optische Zeitmarken in Videos (Nachthimmel bzw. dunkle Bereiche nötig)
 
 -	Erstlösung wenn das Kamerasystem keine Zeitmarken anbietet. 
 
@@ -369,7 +369,7 @@ PyOTE: <img src="media/image5.png" alt="" width="40%">
 
 **Zusammenfassung:**
 
-Es wurde gezeigt, daß mit einer einfachen Idee eine kostengünstige Methode für exakte Zeitstempel in astronomischen Videos im Bereich unter einer Millisekunde für jegliche Optik möglich ist. Der Weg zum eigenen Gerät im Zuge des Selbstbaus wurde detailliert gezeigt \[1\]. Der Quellcode wird zur Verfügung gestellt \[1\]. Der Autor unterstützt bei Problemen mit der Teilebeschaffung (Lieferanten) und hat mehrere Geräte zur eigenen Nutzung, die zum Test leihweise abgegeben werden.
+Es wurde gezeigt, daß mit einer einfachen Idee eine kostengünstige Methode für exakte Zeitstempel in astronomischen Videos mit sehr dunklen Bereichen im Bild im Bereich unter einer Millisekunde für jegliche Optik möglich ist. Der Weg zum eigenen Gerät im Zuge des Selbstbaus wurde detailliert gezeigt \[1\]. Der Quellcode wird zur Verfügung gestellt \[1\]. Der Autor unterstützt bei Problemen mit der Teilebeschaffung (Lieferanten) und hat mehrere Geräte zur eigenen Nutzung, die zum Test leihweise abgegeben werden.
 
 **Quellen:**
 
